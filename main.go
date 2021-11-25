@@ -18,13 +18,13 @@ import (
 
 func main() {
 	// Example: Get captcha data
-	http.HandleFunc("/go_captcha_data", GetCaptchaData)
+	http.HandleFunc("/go_captcha_data", getCaptchaData)
 	// Example: Post check data
-	http.HandleFunc("/go_captcha_check_data", CheckCaptcha)
-	// Example: Demo
-	http.HandleFunc("/go_captcha_demo", Demo)
+	http.HandleFunc("/go_captcha_check_data", checkCaptcha)
+	// Example: demo
+	http.HandleFunc("/go_captcha_demo", demo)
 
-	// 临时定时清空缓存，由于是DEMO即在程序内部实现
+	// 临时定时清空缓存，由于是demo即在程序内部实现
 	runTimedTask()
 
 	log.Println("ListenAndServe 0.0.0.0:8001")
@@ -37,11 +37,11 @@ func main() {
 // =========================================================
 
 /**
- * @Description: Demo
+ * @Description: demo
  * @param w
  * @param r
  */
-func Demo(w http.ResponseWriter, r *http.Request) {
+func demo(w http.ResponseWriter, r *http.Request) {
 	sessid := time.Now().UnixNano() / 1e6
 	t, _ := template.ParseFiles(getPWD() + "/view/demo.html")
 	_ = t.Execute(w, map[string]interface{}{"sessid": sessid})
@@ -52,7 +52,7 @@ func Demo(w http.ResponseWriter, r *http.Request) {
  * @param w
  * @param r
  */
-func GetCaptchaData(w http.ResponseWriter, r *http.Request) {
+func getCaptchaData(w http.ResponseWriter, r *http.Request) {
 	capt := captcha.GetCaptcha()
 
 	//chars := "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -108,7 +108,7 @@ func GetCaptchaData(w http.ResponseWriter, r *http.Request) {
 		_, _ = fmt.Fprintf(w, string(bt))
 		return
 	}
-	WriteCache(dots, key)
+	writeCache(dots, key)
 	bt, _ := json.Marshal(map[string]interface{}{
 		"code": 0,
 		"image_base64": b64,
@@ -123,7 +123,7 @@ func GetCaptchaData(w http.ResponseWriter, r *http.Request) {
  * @param w
  * @param r
  */
-func CheckCaptcha(w http.ResponseWriter, r *http.Request) {
+func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	code := 1
 	_ = r.ParseForm()
 	dots := r.Form.Get("dots")
@@ -137,7 +137,7 @@ func CheckCaptcha(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	cacheData := ReadCache(key)
+	cacheData := readCache(key)
 	if cacheData == "" {
 		bt, _ := json.Marshal(map[string]interface{}{
 			"code": code,
@@ -166,7 +166,7 @@ func CheckCaptcha(w http.ResponseWriter, r *http.Request) {
 			k := i * 2 + 1
 			a, _ := strconv.Atoi(src[j])
 			b, _ := strconv.Atoi(src[k])
-			chkRet = CheckDist(a, b, dot.Dx, dot.Dy, dot.Width, dot.Height)
+			chkRet = checkDist(a, b, dot.Dx, dot.Dy, dot.Width, dot.Height)
 			if !chkRet {
 				break
 			}
@@ -189,7 +189,7 @@ func CheckCaptcha(w http.ResponseWriter, r *http.Request) {
  * @param v
  * @param file
  */
-func WriteCache(v interface{}, file string) {
+func writeCache(v interface{}, file string) {
 	bt, _ := json.Marshal(v)
 	month := time.Now().Month().String()
 	cacheDir := getCacheDir() + month + "/"
@@ -207,7 +207,7 @@ func WriteCache(v interface{}, file string) {
  * @param file
  * @return string
  */
-func ReadCache(file string) string {
+func readCache(file string) string {
 	month := time.Now().Month().String()
 	cacheDir := getCacheDir() + month + "/"
 	file = cacheDir + file + ".json"
@@ -234,7 +234,7 @@ func ReadCache(file string) string {
  * @param height
  * @return bool
  */
-func CheckDist(sx, sy, dx, dy, width int, height int) bool {
+func checkDist(sx, sy, dx, dy, width int, height int) bool {
 	return sx >= dx &&
 		sx <= dx + width &&
 		sy <= dy &&
@@ -281,7 +281,7 @@ func checkFileIsExist(filename string) bool {
 func runTimedTask()  {
 	ticker := time.NewTicker(time.Minute * 5)
 	go func() {
-		for _ = range ticker.C {
+		for range ticker.C {
 			checkCacheOvertimeFile()
 		}
 	}()
