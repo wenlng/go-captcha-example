@@ -1,7 +1,7 @@
 <template>
     <div class="wg-cap-btn" :style="style">
         <div class="wg-cap-btn__inner" :class="activeClass">
-            <!-- wg-cap-active__default wg-cap-active__error wg-cap-active__over wg-cap-active__success--->
+            <!-- wg-cap-active__default wg-cap-active__error wg-cap-active__over wg-cap-active__success -->
             <el-popover
                     v-model="popoverVisible"
                     placement="top"
