@@ -6,8 +6,6 @@
               v-model="captStatus"
               width="100%"
               height="50px"
-              capt-width="300px"
-              capt-height="300px"
               :image-base64="captBase64"
               :thumb-base64="captThumbBase64"
               @confirm="handleConfirm"

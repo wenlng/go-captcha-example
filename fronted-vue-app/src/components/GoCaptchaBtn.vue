@@ -8,8 +8,8 @@
                     trigger="click">
                 <go-captcha
                         v-model="popoverVisible"
-                        :width="captWidth"
-                        :height="captHeight"
+                        width="300px"
+                        height="300px"
                         :max-dot="maxDot"
                         :image-base64="imageBase64"
                         :thumb-base64="thumbBase64"
@@ -91,8 +91,6 @@
             },
             width: String,
             height: String,
-            captWidth: String,
-            captHeight: String,
             maxDot: {
                 type: Number,
                 default: 5
