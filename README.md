@@ -19,12 +19,13 @@ Visit website: http://127.0.0.1:8001/go_captcha_demo
 - captcha-vue-app   # vue component
 - captcha-react-app   # react component
 
+---------------------
 
 ### go-captcha
 Package captcha implements generation and click location verification of image CAPTCHAs. 
 
+- #### go-captcha [https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
 - Demo：[http://47.104.180.148:8081/go_captcha_demo](http://47.104.180.148:8081/go_captcha_demo)
-- go-captcha [https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
 - go-captcha-example [https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
 
 
