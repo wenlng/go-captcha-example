@@ -2,9 +2,18 @@
 
 ```
 git clone github.com/wenlng/go-captcha-example
-cd go-captcha-example
+cd go-captcha-example/captcha-example
+go mod download
 go run main.go
 ```
+
+http://127.0.0.1:8001/go_captcha_demo
+
+### Catalog description
+- captcha-example   # go / demo:html+js
+- captcha-vue   # vue component
+- captcha-react   # react component
+
 
 ### go-captcha
 Package captcha implements generation and click location verification of image CAPTCHAs. 
