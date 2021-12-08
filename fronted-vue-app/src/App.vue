@@ -13,18 +13,32 @@
               @confirm="handleConfirm"
               @refresh="handleRequestCaptCode"
       />
+<!--      <GoCaptchaBtnDialog-->
+<!--              class="go-captcha-btn"-->
+<!--              v-model="captStatus"-->
+<!--              width="100%"-->
+<!--              height="50px"-->
+<!--              capt-width="300px"-->
+<!--              capt-height="300px"-->
+<!--              :image-base64="captBase64"-->
+<!--              :thumb-base64="captThumbBase64"-->
+<!--              @confirm="handleConfirm"-->
+<!--              @refresh="handleRequestCaptCode"-->
+<!--      />-->
     </div>
   </div>
 </template>
 
 <script>
   import GoCaptchaBtn from './components/GoCaptchaBtn'
+  // import GoCaptchaBtnDialog from './components/GoCaptchaBtnDialog'
   import Qs from 'qs'
 
   export default {
     name: 'App',
     components: {
-      GoCaptchaBtn
+      GoCaptchaBtn,
+      // GoCaptchaBtnDialog
     },
     data(){
       return {
