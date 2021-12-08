@@ -6,8 +6,8 @@ github.com/wenlng/go-captcha v1.0.1 h1:mbQD6gmnIvbbqnnaF2HzBxrvvHw+kkXdT4yjzYy3L
 github.com/wenlng/go-captcha v1.0.1/go.mod h1:rt+Uo/hf390XUHJRIPz4EpyEjnNiuCoLbyqTbfvbb4g=
 github.com/wenlng/go-captcha v1.0.5 h1:rP1cwKTViB9ZIQtslMlEGhZbPOoNoDdPPfhTaWTNOYI=
 github.com/wenlng/go-captcha v1.0.5/go.mod h1:rt+Uo/hf390XUHJRIPz4EpyEjnNiuCoLbyqTbfvbb4g=
-github.com/wenlng/go-user-agent v1.0.1 h1:2xuUSMR6jUPBt33f9Tu4jKPcAUscykdzVBvopA9nDTE=
-github.com/wenlng/go-user-agent v1.0.1/go.mod h1:Zt40tgXmCLzFt/7Lxb5Dj1EDZ/cbxDy1PTmW/8TgNi0=
+github.com/wenlng/go-captcha v1.0.7 h1:+0D+kUsjWyd1L1HhvsHVMwsPGOt0T54BmplUQiyFaHw=
+github.com/wenlng/go-captcha v1.0.7/go.mod h1:QgPgpEURSa37gF3GtojNoNRwbMwuatSBx5NXrzASOb0=
 golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97 h1:/UOmuWzQfxxo9UtlXMwuQU8CMgg1eZXqTRwkSQJWKOI=
 golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
 golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d h1:RNPAfi2nHY7C2srAV8A49jpsYr0ADedCk1wq6fTMTvs=
