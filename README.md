@@ -2,17 +2,22 @@
 
 ```
 git clone github.com/wenlng/go-captcha-example
-cd go-captcha-example/captcha-example
+cd go-captcha-example
+```
+
+## start backend
+```
+cd backend
 go mod download
 go run main.go
 ```
 
-http://127.0.0.1:8001/go_captcha_demo
+Visit website: http://127.0.0.1:8001/go_captcha_demo
 
 ### Catalog description
-- captcha-example   # go / demo:html+js
-- captcha-vue   # vue component
-- captcha-react   # react component
+- backend   # go / demo=html+js
+- captcha-vue-app   # vue component
+- captcha-react-app   # react component
 
 
 ### go-captcha
