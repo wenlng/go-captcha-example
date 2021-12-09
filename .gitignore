@@ -13,10 +13,6 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-fronted-vue-app/.idea
-fronted-vue-app/node_modules/
-fronted-vue3-app/.idea
-fronted-vue3-app/node_modules/
 .cache/
 .idea/
 .DS_Store

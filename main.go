@@ -161,7 +161,8 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	chkRet := false
 	if len(src) >= len(dct) * 2 {
 		chkRet = true
-		for i, dot := range dct {
+		for _, dot := range dct {
+			i := dot.Index
 			j := i * 2
 			k := i * 2 + 1
 			a, _ := strconv.Atoi(src[j])
