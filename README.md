@@ -5,9 +5,8 @@ git clone github.com/wenlng/go-captcha-example
 cd go-captcha-example
 ```
 
-## start backend
+## Start backend
 ```
-cd backend
 go mod download
 go run main.go
 ```
