@@ -74,19 +74,19 @@ func getCaptchaData(w http.ResponseWriter, r *http.Request) {
 		"#660033",
 	})
 
-	capt.SetFont([]string{
-		getPWD() + "/resources/fonts/fzshengsksjw_cu.ttf",
-		getPWD() + "/resources/fonts/fzssksxl.ttf",
-		getPWD() + "/resources/fonts/hyrunyuan.ttf",
-	})
+	// capt.SetFont([]string{
+	// 	getPWD() + "/resources/fonts/fzshengsksjw_cu.ttf",
+	// 	getPWD() + "/resources/fonts/fzssksxl.ttf",
+	// 	getPWD() + "/resources/fonts/hyrunyuan.ttf",
+	// })
 
-	capt.SetBackground([]string{
-		getPWD() + "/resources/images/1.jpg",
-		getPWD() + "/resources/images/2.jpg",
-		getPWD() + "/resources/images/3.jpg",
-		getPWD() + "/resources/images/4.jpg",
-		getPWD() + "/resources/images/5.jpg",
-	})
+	// capt.SetBackground([]string{
+	// 	getPWD() + "/resources/images/1.jpg",
+	// 	getPWD() + "/resources/images/2.jpg",
+	// 	getPWD() + "/resources/images/3.jpg",
+	// 	getPWD() + "/resources/images/4.jpg",
+	// 	getPWD() + "/resources/images/5.jpg",
+	// })
 
 	//capt.SetThumbBackground([]string{
 	//	getPWD() + "/resources/images/thumb/r1.jpg",
