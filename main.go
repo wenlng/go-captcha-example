@@ -64,21 +64,21 @@ func getCaptchaData(w http.ResponseWriter, r *http.Request) {
 	//chars := []string{"你","好","呀","这","是","点","击","验","证","码","哟"}
 	//_ = capt.SetRangChars(chars)
 
-	capt.SetTextRangFontColors([]string{
-		"#006600",
-		"#005db9",
-		"#aa002a",
-		"#875400",
-		"#6e3700",
-		"#333333",
-		"#660033",
-	})
-
-	// capt.SetFont([]string{
-	// 	getPWD() + "/resources/fonts/fzshengsksjw_cu.ttf",
-	// 	getPWD() + "/resources/fonts/fzssksxl.ttf",
-	// 	getPWD() + "/resources/fonts/hyrunyuan.ttf",
-	// })
+	//capt.SetTextRangFontColors([]string{
+	//	"#006600",
+	//	"#005db9",
+	//	"#aa002a",
+	//	"#875400",
+	//	"#6e3700",
+	//	"#333333",
+	//	"#660033",
+	//})
+	//
+	//capt.SetFont([]string{
+	//	getPWD() + "/resources/fonts/fzshengsksjw_cu.ttf",
+	//	getPWD() + "/resources/fonts/fzssksxl.ttf",
+	//	getPWD() + "/resources/fonts/hyrunyuan.ttf",
+	//})
 
 	// capt.SetBackground([]string{
 	// 	getPWD() + "/resources/images/1.jpg",
@@ -130,7 +130,7 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	key := r.Form.Get("key")
 	if dots == "" || key == "" {
 		bt, _ := json.Marshal(map[string]interface{}{
-			"code": code,
+			"code":    code,
 			"message": "dots or key param is empty",
 		})
 		_, _ = fmt.Fprintf(w, string(bt))
@@ -140,8 +140,8 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	cacheData := readCache(key)
 	if cacheData == "" {
 		bt, _ := json.Marshal(map[string]interface{}{
-			"code": code,
-			"message": "Invalid or expired key",
+			"code":    code,
+			"message": "illegal key",
 		})
 		_, _ = fmt.Fprintf(w, string(bt))
 		return
@@ -151,30 +151,30 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	var dct map[int]captcha.CharDot
 	if err := json.Unmarshal([]byte(cacheData), &dct); err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
-			"code": code,
-			"message": "Invalid or expired key",
+			"code":    code,
+			"message": "illegal key",
 		})
 		_, _ = fmt.Fprintf(w, string(bt))
 		return
 	}
 
 	chkRet := false
-	if len(src) >= len(dct) * 2 {
+	if len(src) >= len(dct)*2 {
 		chkRet = true
-		for _, dot := range dct {
-			i := dot.Index
+		for i, dot := range dct {
 			j := i * 2
-			k := i * 2 + 1
-			a, _ := strconv.Atoi(src[j])
-			b, _ := strconv.Atoi(src[k])
-			chkRet = checkDist(a, b, dot.Dx, dot.Dy, dot.Width, dot.Height)
+			k := i*2 + 1
+			sx, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[j]), 64)
+			sy, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[k]), 64)
+			// 检测点位置
+			chkRet = captcha.CheckPointDist(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height))
 			if !chkRet {
 				break
 			}
 		}
 	}
 
-	if chkRet && (len(dct) * 2) == len(src) {
+	if chkRet && (len(dct)*2) == len(src) {
 		code = 0
 	}
 
@@ -235,11 +235,11 @@ func readCache(file string) string {
  * @param height
  * @return bool
  */
-func checkDist(sx, sy, dx, dy, width int, height int) bool {
+func checkDist(sx, sy, dx, dy, width, height int64) bool {
 	return sx >= dx &&
-		sx <= dx + width &&
+		sx <= dx+width &&
 		sy <= dy &&
-		sy >= dy - height
+		sy >= dy-height
 }
 
 /**
