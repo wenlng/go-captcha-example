@@ -22,3 +22,5 @@
 *.njsproj
 *.sln
 *.sw?
+go-captcha-example
+processes.json

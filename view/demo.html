@@ -937,7 +937,7 @@
             captchaImageDom.classList.add("wg-cap-wrap__hidden")
             captchaThumbDom.classList.add("wg-cap-wrap__hidden")
 
-            Ajax.get("/go_captcha_data", {}, function(data){
+            Ajax.get("/api/go_captcha_data", {}, function(data){
                 if (data['code'] === 0) {
                     captchaImageDom.classList.remove("wg-cap-wrap__hidden")
                     captchaThumbDom.classList.remove("wg-cap-wrap__hidden")
@@ -957,7 +957,7 @@
          * @param dots
          */
         function requestCheckCaptchaData(dots) {
-            Ajax.post("/go_captcha_check_data", dots, function(data){
+            Ajax.post("/api/go_captcha_check_data", dots, function(data){
                 captchaBtnControlDom.classList.remove("wg-cap-active__default")
                 captchaBtnControlDom.classList.remove("wg-cap-active__over")
                 if (data['code'] === 0) {
