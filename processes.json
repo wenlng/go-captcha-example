@@ -1,0 +1,39 @@
+{
+  "name": "go-captcha-example",
+  "version": "1.0.0",
+  "description": "go-captcha-example",
+  "apps": [
+    {
+      "name": "go_captcha_example",
+      "version": "1.0.0",
+      "script": "./processes.json",
+      "interpreter": "./go-captcha-example",
+      "cwd": "./",
+      "args": "",
+      "interpreter_args": "--env pro",
+      "watch": false,
+      "ignore_watch": [
+
+      ],
+      "exec_mode": "fork",
+      "instances": 1,
+      "max_memory_restart": "300M",
+      "log_file": "./logs/go_captcha_example.log",
+      "error_file": "./logs/go_captcha_example-err.log",
+      "out_file": "./logs/go_captcha_example-out.log",
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm:ss",
+      "min_uptime": 100,
+      "max_restarts": 128,
+      "autorestart": true,
+      "cron_restart": "",
+      "restart_delay": 5,
+      "env": {
+        "--env": "pro"
+      },
+      "env_production": {
+        "--env": "pro"
+      }
+    }
+  ]
+}
