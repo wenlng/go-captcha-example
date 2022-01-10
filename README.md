@@ -21,8 +21,8 @@ Package captcha implements generation and click location verification of image C
 
 - Github：[https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
 - Go Example Code：[https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
-- Example Code of Vue：[https://github.com/wenlng/go-captcha-example-vue](https://github.com/wenlng/go-captcha-example-vue)
-- Example Code of React：[https://github.com/wenlng/go-captcha-example-react](https://github.com/wenlng/go-captcha-example-react)
+- Example Code of Vue：[https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)
+- Example Code of React：[https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)
 - Online Demo：[http://47.104.180.148:8081/go_captcha_demo](http://47.104.180.148:8081/go_captcha_demo)
 - Author Website: [http://witkeycode.com](http://witkeycode.com)
 
