@@ -532,7 +532,6 @@
      Vue实例代码：https://github.com/wenlng/go-captcha-vue
      React实例代码：https://github.com/wenlng/go-captcha-react
      在线演示：http://47.104.180.148:8081/go_captcha_demo
-     作者网站: http://witkeycode.com
      * ==================================================================================
      */
 
@@ -561,7 +560,6 @@
          * @param options
          */
         function requestHandler(options){
-            // 调用函数时如果options没有指定，就给它赋值{},一个空的Object
             options = options || {}
             // 请求格式GET、POST，默认为GET
             options.type = (options.type || "GET").toUpperCase()
@@ -577,7 +575,6 @@
             }else if(options.type === "POST"){
                 xhr.open("post",options.url,true);
                 // 设置表单提交时的内容类型
-                // Content-type数据请求的格式
                 xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
                 xhr.send(params);
             }
@@ -648,7 +645,7 @@
         function handlePost (url, data, success, error, complete) {
             requestHandler({
                 url: url,
-                type: 'post',
+                type: 'POST',
                 data: data,
                 dataType:'json',
                 timeout: 10000,
@@ -670,11 +667,10 @@
         function handleGet (url, data, success, error, complete) {
             requestHandler({
                 url: url,
-                type: 'post',
+                type: 'GET',
                 data: data,
                 dataType:'json',
                 timeout: 10000,
-                contentType: "application/json",
                 success: success,
                 error: error,
                 complete: complete
@@ -763,9 +759,9 @@
             if(el.addEventListener){
                 el.addEventListener(type,fn,false);
             }else if(el.attachEvent){
-                el.attachEvent("on"+type,fn);
+                el.attachEvent("on" + type,fn);
             }else{
-                el["on"+type]=fn;
+                el["on" + type]=fn;
             }
         }
 

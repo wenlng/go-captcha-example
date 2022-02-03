@@ -168,11 +168,16 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 		chkRet = true
 		for i, dot := range dct {
 			j := i * 2
-			k := i*2 + 1
+			k := i * 2 + 1
 			sx, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[j]), 64)
 			sy, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[k]), 64)
+
 			// 检测点位置
-			chkRet = captcha.CheckPointDist(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height))
+			// chkRet = captcha.CheckPointDist(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height))
+
+			// 扩展文字四周检测范围，提高校验通过率
+			// 例如：文本的宽和高为30，则校验范围x为10-40，y为15-55，此时扩充5像素后校验范围宽和高为40，校验范围x为5-45，位置y为10-60
+			chkRet = captcha.CheckPointDistWithPadding(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height), 10)
 			if !chkRet {
 				break
 			}
@@ -201,7 +206,7 @@ func writeCache(v interface{}, file string) {
 	cacheDir := getCacheDir() + month + "/"
 	_ = os.MkdirAll(cacheDir, 0660)
 	file = cacheDir + file + ".json"
-	logFile, _ := os.OpenFile(file, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0644)
+	logFile, _ := os.OpenFile(file, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0644)
 	defer logFile.Close()
 	// 检查过期文件
 	//checkCacheOvertimeFile()
@@ -242,9 +247,9 @@ func readCache(file string) string {
  */
 func checkDist(sx, sy, dx, dy, width, height int64) bool {
 	return sx >= dx &&
-		sx <= dx+width &&
+		sx <= dx + width &&
 		sy <= dy &&
-		sy >= dy-height
+		sy >= dy - height
 }
 
 /**

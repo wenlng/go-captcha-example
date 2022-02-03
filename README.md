@@ -11,7 +11,7 @@ go mod download
 go run main.go
 ```
 
-Visit website: http://127.0.0.1:8001/go_captcha_demo
+Visit website: http://127.0.0.1:9001/go_captcha_demo
 
 
 ---------------------
@@ -24,7 +24,6 @@ Package captcha implements generation and click location verification of image C
 - Example Code of Vue：[https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)
 - Example Code of React：[https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)
 - Online Demo：[http://47.104.180.148:8081/go_captcha_demo](http://47.104.180.148:8081/go_captcha_demo)
-- Author Website: [http://witkeycode.com](http://witkeycode.com)
 
 
 <div align="center">
