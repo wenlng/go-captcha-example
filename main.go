@@ -176,7 +176,7 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 			// chkRet = captcha.CheckPointDist(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height))
 
 			// 扩展文字四周检测范围，提高校验通过率
-			// 例如：文本的宽和高为30，则校验范围x为10-40，y为15-55，此时扩充5像素后校验范围宽和高为40，校验范围x为5-45，位置y为10-60
+			// 例如：文本的宽和高为30，校验范围x为10-40，y为15-55，此时扩充5像素后校验范围宽和高为40，则校验范围x为5-45，位置y为10-60
 			chkRet = captcha.CheckPointDistWithPadding(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height), 5)
 			if !chkRet {
 				break
