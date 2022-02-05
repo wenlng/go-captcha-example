@@ -60,50 +60,6 @@ func demo(w http.ResponseWriter, r *http.Request) {
 func getCaptchaData(w http.ResponseWriter, r *http.Request) {
 	capt := captcha.GetCaptcha()
 
-	//chars := "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	//_ = capt.SetRangChars(strings.Split(chars, ""))
-
-	//chars := []string{"HE","CA","WO","NE","HT","IE","PG","GI","CH","CO","DA"}
-	//_ = capt.SetRangChars(chars)
-
-	//chars := []string{"你","好","呀","这","是","点","击","验","证","码","哟"}
-	//_ = capt.SetRangChars(chars)
-
-	//capt.SetTextRangFontColors([]string{
-	//	"#006600",
-	//	"#005db9",
-	//	"#aa002a",
-	//	"#875400",
-	//	"#6e3700",
-	//	"#333333",
-	//	"#660033",
-	//})
-	//
-	//capt.SetFont([]string{
-	//	getPWD() + "/resources/fonts/fzshengsksjw_cu.ttf",
-	//	getPWD() + "/resources/fonts/fzssksxl.ttf",
-	//	getPWD() + "/resources/fonts/hyrunyuan.ttf",
-	//})
-
-	// capt.SetBackground([]string{
-	// 	getPWD() + "/resources/images/1.jpg",
-	// 	getPWD() + "/resources/images/2.jpg",
-	// 	getPWD() + "/resources/images/3.jpg",
-	// 	getPWD() + "/resources/images/4.jpg",
-	// 	getPWD() + "/resources/images/5.jpg",
-	// })
-
-	//capt.SetThumbBackground([]string{
-	//	getPWD() + "/resources/images/thumb/r1.jpg",
-	//	getPWD() + "/resources/images/thumb/r2.jpg",
-	//	getPWD() + "/resources/images/thumb/r3.jpg",
-	//	getPWD() + "/resources/images/thumb/r4.jpg",
-	//	getPWD() + "/resources/images/thumb/r5.jpg",
-	//})
-
-	//capt.SetThumbBgCirclesNum(200)
-	//capt.SetImageFontAlpha(0.5)
-
 	dots, b64, tb64, key, err := capt.Generate()
 	if err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
@@ -164,8 +120,7 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 	}
 
 	chkRet := false
-	if len(src) >= len(dct)*2 {
-		chkRet = true
+	if (len(dct)*2) == len(src) {
 		for i, dot := range dct {
 			j := i * 2
 			k := i * 2 + 1
@@ -175,7 +130,7 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 			// 检测点位置
 			// chkRet = captcha.CheckPointDist(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height))
 
-			// 扩展文字四周检测范围，提高校验通过率
+			// 校验点的位置,在原有的区域上添加额外边距进行扩张计算区域,不推荐设置过大的padding
 			// 例如：文本的宽和高为30，校验范围x为10-40，y为15-45，此时扩充5像素后校验范围宽和高为40，则校验范围x为5-45，位置y为10-50
 			chkRet = captcha.CheckPointDistWithPadding(int64(sx), int64(sy), int64(dot.Dx), int64(dot.Dy), int64(dot.Width), int64(dot.Height), 5)
 			if !chkRet {
@@ -184,7 +139,8 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if chkRet && (len(dct)*2) == len(src) {
+	if chkRet {
+		// 通过校验
 		code = 0
 	}
 

@@ -1,12 +1,8 @@
 # go-captcha-example
 
 ```
-git clone github.com/wenlng/go-captcha-example
+git clone https://github.com/wenlng/go-captcha-example.git
 cd go-captcha-example
-```
-
-## Start backend
-```
 go mod download
 go run main.go
 ```
@@ -16,8 +12,8 @@ Visit website: http://127.0.0.1:9001/go_captcha_demo
 
 ---------------------
 
-### go-captcha
-Package captcha implements generation and click location verification of image CAPTCHAs. 
+### Go Captcha
+Go Captcha is a behavioral captcha, which implements the generation of random verification text and the verification of click position information.
 
 - Github：[https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
 - Go Example Code：[https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
