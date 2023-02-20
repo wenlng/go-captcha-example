@@ -121,7 +121,8 @@ func checkCaptcha(w http.ResponseWriter, r *http.Request) {
 
 	chkRet := false
 	if (len(dct)*2) == len(src) {
-		for i, dot := range dct {
+		for i := 0; i < len(dct); i++ {
+			dot := dct[i]
 			j := i * 2
 			k := i * 2 + 1
 			sx, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[j]), 64)
