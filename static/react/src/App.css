@@ -1,0 +1,50 @@
+#root{
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  flex-direction: column;
+  -webkit-box-align:center;
+  justify-content: center;
+  justify-items: center;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  -ms-flex-align:center;
+  align-items: center;
+}
+
+.cap-tip{
+  padding: 50px 20px 100px;
+  font-size: 13px;
+  color: #76839b;
+  text-align: center;
+  line-height: 180%;
+  width: 100%;
+
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.cap-tip a {
+  display: block;
+  margin: 0 5px;
+}
+
+.cap-tip a img {
+  height: 27px;
+}
+
+.cap-tip span {
+  margin: 0 5px;
+}
