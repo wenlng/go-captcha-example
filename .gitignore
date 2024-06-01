@@ -37,6 +37,7 @@ node_modules
 dist
 dist-ssr
 *.local
+go-captcha-example
 
 /cypress/videos/
 /cypress/screenshots/
