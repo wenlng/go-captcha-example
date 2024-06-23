@@ -16,7 +16,7 @@ import (
 var slideRegionCapt slide.Captcha
 
 func init() {
-	slideRegionCapt = slide.NewWithRegion(
+	builder := slide.NewBuilder(
 		slide.WithGenGraphNumber(2),
 		slide.WithEnableGraphVerticalRandom(true),
 	)
@@ -42,10 +42,12 @@ func init() {
 	}
 
 	// set resources
-	slideRegionCapt.SetResources(
+	builder.SetResources(
 		slide.WithGraphImages(newGraphs),
 		slide.WithBackgrounds(imgs),
 	)
+
+	slideRegionCapt = builder.MakeWithRegion()
 }
 
 // GetSlideRegionCaptData .

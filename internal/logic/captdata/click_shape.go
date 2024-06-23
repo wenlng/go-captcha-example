@@ -17,7 +17,7 @@ import (
 var shapeCapt click.Captcha
 
 func init() {
-	shapeCapt = click.NewWithShape(
+	builder := click.NewBuilder(
 		click.WithRangeLen(option.RangeVal{Min: 3, Max: 6}),
 		click.WithRangeVerifyLen(option.RangeVal{Min: 2, Max: 3}),
 		click.WithRangeThumbBgDistort(1),
@@ -38,10 +38,12 @@ func init() {
 	}
 
 	// set resources
-	shapeCapt.SetResources(
+	builder.SetResources(
 		click.WithShapes(shapeMaps),
 		click.WithBackgrounds(imgs),
 	)
+
+	shapeCapt = builder.MakeWithShape()
 }
 
 // GetClickShapesCaptData .

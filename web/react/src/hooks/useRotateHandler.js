@@ -78,7 +78,7 @@ export const useRotateHandler = (config) => {
     }).catch((e)=>{
       console.warn(e)
     })
-  }, [data, setState, config.checkApi, requestCaptchaData])
+  }, [data, state, setState, config.checkApi, requestCaptchaData])
 
   useEffect(() => {
     if (state.popoverVisible) {

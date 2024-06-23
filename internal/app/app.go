@@ -27,14 +27,14 @@ func Start() {
 	http.Handle("/api/go-captcha-check-data/rotate-basic", CORS(http.HandlerFunc(checkdata.CheckRotateData)))
 
 	// example: js+html+css
-	viewStatic := path.Join(helper.GetPWD(), "/static/native/")
+	viewStatic := path.Join(helper.GetPWD(), "/web/native/")
 	viewFsh := http.FileServer(http.Dir(viewStatic))
 	http.Handle("/go-captcha-example/", http.StripPrefix("/go-captcha-example/", viewFsh))
 
 	// Example: vue
-	static := path.Join(helper.GetPWD(), "/static/vue/")
+	static := path.Join(helper.GetPWD(), "/web/vue/dist")
 	fsh := http.FileServer(http.Dir(static))
-	http.Handle("/go-captcha-demo/", http.StripPrefix("/go-captcha-demo/", fsh))
+	http.Handle("/", http.StripPrefix("/", fsh))
 
 	cache.RunTimedTask()
 

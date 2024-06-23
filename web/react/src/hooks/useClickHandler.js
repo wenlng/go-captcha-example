@@ -20,6 +20,7 @@ export const useClickHandler = (config) => {
 
   const visibleChangeEvent = useCallback((visible) => {
     setState({...state, popoverVisible: visible})
+    console.log("<<<<<<<<<")
   }, [state])
 
   const closeEvent = useCallback(() => {
@@ -47,7 +48,7 @@ export const useClickHandler = (config) => {
     }).catch((e)=>{
       console.warn(e)
     })
-  }, [setData, config.getApi])
+  }, [state, setData, config.getApi])
 
   const refreshEvent = useCallback(() => {
     requestCaptchaData()

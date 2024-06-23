@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^4.17.3",
+    "antd": "^4.24.16",
     "axios": "^0.24.0",
-    "go-captcha-react": "^2.0.0-beta.1",
+    "go-captcha-react": "1.0.0-pre.1",
     "lodash": "^4.17.21",
     "qs": "^6.12.1",
     "react": "^18.0.0",

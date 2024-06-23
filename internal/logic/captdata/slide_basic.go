@@ -16,7 +16,7 @@ import (
 var slideBasicCapt slide.Captcha
 
 func init() {
-	slideBasicCapt = slide.New(
+	builder := slide.NewBuilder(
 		//slide.WithGenGraphNumber(2),
 		slide.WithEnableGraphVerticalRandom(true),
 	)
@@ -43,10 +43,12 @@ func init() {
 	}
 
 	// set resources
-	slideBasicCapt.SetResources(
+	builder.SetResources(
 		slide.WithGraphImages(newGraphs),
 		slide.WithBackgrounds(imgs),
 	)
+
+	slideBasicCapt = builder.Make()
 }
 
 // GetSlideBasicCaptData .

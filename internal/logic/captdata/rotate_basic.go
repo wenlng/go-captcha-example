@@ -9,13 +9,16 @@ import (
 	"net/http"
 
 	"github.com/wenlng/go-captcha-assets/resources/images"
+	"github.com/wenlng/go-captcha/v2/base/option"
 	"github.com/wenlng/go-captcha/v2/rotate"
 )
 
 var rotateBasicCapt rotate.Captcha
 
 func init() {
-	rotateBasicCapt = rotate.New()
+	builder := rotate.NewBuilder(rotate.WithRangeAnglePos([]option.RangeVal{
+		{Min: 20, Max: 330},
+	}))
 
 	// background images
 	imgs, err := images.GetImages()
@@ -24,9 +27,11 @@ func init() {
 	}
 
 	// set resources
-	rotateBasicCapt.SetResources(
+	builder.SetResources(
 		rotate.WithImages(imgs),
 	)
+
+	rotateBasicCapt = builder.Make()
 }
 
 // GetRotateBasicCaptData .
