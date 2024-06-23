@@ -8,13 +8,13 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.7.14",
-    "go-captcha-vue": "1.0.0-pre.1",
     "axios": "^0.24.0",
+    "core-js": "^3.8.3",
     "element-ui": "^2.15.6",
+    "go-captcha-vue": "1.0.1",
     "lodash": "^4.17.21",
-    "qs": "^6.12.1"
+    "qs": "^6.12.1",
+    "vue": "^2.7.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.7.2
     version: 1.7.2
   go-captcha-vue:
-    specifier: 2.0.0-pre.1
-    version: 2.0.0-pre.1(vue@3.4.30)
+    specifier: 2.0.1
+    version: 2.0.1(vue@3.4.30)
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -695,8 +695,8 @@ packages:
       hasown: 2.0.2
     dev: false
 
-  /go-captcha-vue@2.0.0-pre.1(vue@3.4.30):
-    resolution: {integrity: sha512-u5JgEpCz0F9oVJ7bQ+WXJBhaz7PxRqLk4Me2KE5YGJ8qWVPJsbPg+WmqaOPasMex+f0Gu0oKZ7zZlZLXt3jdbA==}
+  /go-captcha-vue@2.0.1(vue@3.4.30):
+    resolution: {integrity: sha512-nzFrn4qlk+bE1kHioCaOkdoMHkrzBZ0FzYcXgoGCQ9CSeDEYtMrey64T6wGz0JdEJwznElKc97jUGhbLavO5xQ==}
     peerDependencies:
       vue: '>=3'
     dependencies:
