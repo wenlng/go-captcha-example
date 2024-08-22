@@ -23,6 +23,8 @@ func init() {
 	builder := click.NewBuilder(
 		click.WithRangeLen(option.RangeVal{Min: 4, Max: 6}),
 		click.WithRangeVerifyLen(option.RangeVal{Min: 2, Max: 4}),
+		//click.WithRangeLen(option.RangeVal{Min: 2, Max: 4}),
+		//click.WithDisabledRangeVerifyLen(true),
 		click.WithRangeThumbColors([]string{
 			"#1f55c4",
 			"#780592",

@@ -1,31 +1,31 @@
 
-const Captcha = (function () {
-    const getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/slide-basic"
-    const checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/slide-basic"
+var Captcha = (function () {
+    var getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/slide-basic"
+    var checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/slide-basic"
 
     var captchaKey = ""
     var pointX = 0
     var pointY = 0
 
-    const hiddenClassName = "wg-cap-wrap__hidden"
-    const dialogActiveClassName = "wg-cap-dialog__active"
-    const activeDefaultClassName = "wg-cap-active__default"
-    const activeOverClassName = "wg-cap-active__over"
-    const activeErrorClassName = "wg-cap-active__error"
-    const activeSuccessClassName = "wg-cap-active__success"
+    var hiddenClassName = "wg-cap-wrap__hidden"
+    var dialogActiveClassName = "wg-cap-dialog__active"
+    var activeDefaultClassName = "wg-cap-active__default"
+    var activeOverClassName = "wg-cap-active__over"
+    var activeErrorClassName = "wg-cap-active__error"
+    var activeSuccessClassName = "wg-cap-active__success"
 
-    const captchaDragWrapDom    = document.querySelector("#wg-cap-wrap-drag")
-    const captchaTileWrapDom    = document.querySelector("#wg-cap-tile")
-    const captchaTileImageDom   = document.querySelector("#wg-cap-tile-picture")
-    const captchaImageDom       = document.querySelector("#wg-cap-image")
-    const captchaBtnControlDom  = document.querySelector("#wg-cap-btn-control")
-    const captchaCloseBtnDom    = document.querySelector("#wg-cap-close-btn")
-    const captchaDialogBtnDom   = document.querySelector("#wg-cap-dialog")
-    const captchaRefreshBtnDom  = document.querySelector("#wg-cap-refresh-btn")
-    const captchaDefaultBtnDom  = document.querySelector("#wg-cap-btn-default")
-    const captchaErrorBtnDom    = document.querySelector("#wg-cap-btn-error")
-    const captchaOverBtnDom     = document.querySelector("#wg-cap-btn-over")
-    const dialogDom             = document.querySelector("#wg-cap-container")
+    var captchaDragWrapDom    = document.querySelector("#wg-cap-wrap-drag")
+    var captchaTileWrapDom    = document.querySelector("#wg-cap-tile")
+    var captchaTileImageDom   = document.querySelector("#wg-cap-tile-picture")
+    var captchaImageDom       = document.querySelector("#wg-cap-image")
+    var captchaBtnControlDom  = document.querySelector("#wg-cap-btn-control")
+    var captchaCloseBtnDom    = document.querySelector("#wg-cap-close-btn")
+    var captchaDialogBtnDom   = document.querySelector("#wg-cap-dialog")
+    var captchaRefreshBtnDom  = document.querySelector("#wg-cap-refresh-btn")
+    var captchaDefaultBtnDom  = document.querySelector("#wg-cap-btn-default")
+    var captchaErrorBtnDom    = document.querySelector("#wg-cap-btn-error")
+    var captchaOverBtnDom     = document.querySelector("#wg-cap-btn-over")
+    var dialogDom             = document.querySelector("#wg-cap-container")
 
     function __initialize() {
         // requestCaptchaData()
@@ -67,16 +67,16 @@ const Captcha = (function () {
     }
 
     function handleDragEvent(ev){
-        const ee = ev || window.event;
-        const touch = ev.touches && ev.touches[0];
-        const offsetLeft = captchaTileWrapDom.offsetLeft
-        const offsetTop = captchaTileWrapDom.offsetTop
-        const width = captchaDragWrapDom.offsetWidth
-        const height = captchaDragWrapDom.offsetHeight
-        const tileWidth = captchaTileWrapDom.offsetWidth
-        const tileHeight = captchaTileWrapDom.offsetHeight
-        const maxWidth = width - tileWidth
-        const maxHeight = height - tileHeight
+        var ee = ev || window.event;
+        var touch = ev.touches && ev.touches[0];
+        var offsetLeft = captchaTileWrapDom.offsetLeft
+        var offsetTop = captchaTileWrapDom.offsetTop
+        var width = captchaDragWrapDom.offsetWidth
+        var height = captchaDragWrapDom.offsetHeight
+        var tileWidth = captchaTileWrapDom.offsetWidth
+        var tileHeight = captchaTileWrapDom.offsetHeight
+        var maxWidth = width - tileWidth
+        var maxHeight = height - tileHeight
 
         var isMoving = false
         var startX = 0;
@@ -89,11 +89,11 @@ const Captcha = (function () {
             startY = ee.clientY - offsetTop
         }
 
-        const handleMove = function(e) {
+        var handleMove = function(e) {
             isMoving = true
 
-            const mTouche = e.touches && e.touches[0];
-            const me = e || window.event;
+            var mTouche = e.touches && e.touches[0];
+            var me = e || window.event;
 
             var left = 0;
             var top = 0;
@@ -128,13 +128,13 @@ const Captcha = (function () {
             me.preventDefault()
         }
 
-        const handleUp = function(e) {
-            const ue = e || window.event;
+        var handleUp = function(e) {
+            var ue = e || window.event;
             if (!isMoving) {
                 return
             }
 
-            const uTouche = e.changedTouches && e.changedTouches[0];
+            var uTouche = e.changedTouches && e.changedTouches[0];
             var mouseX = 0;
             var mouseY = 0;
             if (uTouche) {
@@ -153,17 +153,17 @@ const Captcha = (function () {
             Helper.removeEventListener(captchaDragWrapDom, "touchmove", handleMove, false)
             Helper.removeEventListener(captchaDragWrapDom, "touchend", handleUp, false)
 
-            const xy = Helper.getDomXY(captchaDragWrapDom)
+            var xy = Helper.getDomXY(captchaDragWrapDom)
 
-            const domX = xy.domX
-            const domY = xy.domY
+            var domX = xy.domX
+            var domY = xy.domY
 
-            const txy = Helper.getDomXY(captchaTileWrapDom)
-            const ox = mouseX - txy.domX
-            const oy = mouseY - txy.domY
+            var txy = Helper.getDomXY(captchaTileWrapDom)
+            var ox = mouseX - txy.domX
+            var oy = mouseY - txy.domY
 
-            const xPos = mouseX - domX - ox;
-            const yPos = mouseY - domY - oy;
+            var xPos = mouseX - domX - ox;
+            var yPos = mouseY - domY - oy;
 
             handleClickCheck(xPos, yPos)
 

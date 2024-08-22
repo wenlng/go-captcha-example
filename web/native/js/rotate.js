@@ -1,31 +1,31 @@
 
-const Captcha = (function () {
-    const getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/rotate-basic"
-    const checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/rotate-basic"
+var Captcha = (function () {
+    var getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/rotate-basic"
+    var checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/rotate-basic"
 
     var captchaKey = ""
 
-    const hiddenClassName = "wg-cap-wrap__hidden"
-    const dialogActiveClassName = "wg-cap-dialog__active"
-    const activeDefaultClassName = "wg-cap-active__default"
-    const activeOverClassName = "wg-cap-active__over"
-    const activeErrorClassName = "wg-cap-active__error"
-    const activeSuccessClassName = "wg-cap-active__success"
+    var hiddenClassName = "wg-cap-wrap__hidden"
+    var dialogActiveClassName = "wg-cap-dialog__active"
+    var activeDefaultClassName = "wg-cap-active__default"
+    var activeOverClassName = "wg-cap-active__over"
+    var activeErrorClassName = "wg-cap-active__error"
+    var activeSuccessClassName = "wg-cap-active__success"
 
-    const captchaDragWrapDom        = document.querySelector("#wg-cap-wrap-drag")
-    const captchaThumbWrapDom        = document.querySelector("#wg-cap-thumb")
-    const captchaDragSlideBarDom    = document.querySelector("#wg-cap-drag-slidebar")
-    const captchaDragBlockDom       = document.querySelector("#wg-cap-drag-block")
-    const captchaThumbImageDom       = document.querySelector("#wg-cap-thumb-picture")
-    const captchaImageDom           = document.querySelector("#wg-cap-image")
-    const captchaBtnControlDom      = document.querySelector("#wg-cap-btn-control")
-    const captchaCloseBtnDom        = document.querySelector("#wg-cap-close-btn")
-    const captchaDialogBtnDom       = document.querySelector("#wg-cap-dialog")
-    const captchaRefreshBtnDom      = document.querySelector("#wg-cap-refresh-btn")
-    const captchaDefaultBtnDom      = document.querySelector("#wg-cap-btn-default")
-    const captchaErrorBtnDom        = document.querySelector("#wg-cap-btn-error")
-    const captchaOverBtnDom         = document.querySelector("#wg-cap-btn-over")
-    const dialogDom                 = document.querySelector("#wg-cap-container")
+    var captchaDragWrapDom        = document.querySelector("#wg-cap-wrap-drag")
+    var captchaThumbWrapDom        = document.querySelector("#wg-cap-thumb")
+    var captchaDragSlideBarDom    = document.querySelector("#wg-cap-drag-slidebar")
+    var captchaDragBlockDom       = document.querySelector("#wg-cap-drag-block")
+    var captchaThumbImageDom       = document.querySelector("#wg-cap-thumb-picture")
+    var captchaImageDom           = document.querySelector("#wg-cap-image")
+    var captchaBtnControlDom      = document.querySelector("#wg-cap-btn-control")
+    var captchaCloseBtnDom        = document.querySelector("#wg-cap-close-btn")
+    var captchaDialogBtnDom       = document.querySelector("#wg-cap-dialog")
+    var captchaRefreshBtnDom      = document.querySelector("#wg-cap-refresh-btn")
+    var captchaDefaultBtnDom      = document.querySelector("#wg-cap-btn-default")
+    var captchaErrorBtnDom        = document.querySelector("#wg-cap-btn-error")
+    var captchaOverBtnDom         = document.querySelector("#wg-cap-btn-over")
+    var dialogDom                 = document.querySelector("#wg-cap-container")
 
     function __initialize() {
         // requestCaptchaData()
@@ -66,13 +66,13 @@ const Captcha = (function () {
     }
 
     function handleDragEvent(ev){
-        const touch = ev.touches && ev.touches[0];
-        const ee = ev || window.event;
-        const offsetLeft = captchaDragBlockDom.offsetLeft
-        const width = captchaDragSlideBarDom.offsetWidth
-        const blockWidth = captchaDragBlockDom.offsetWidth
-        const maxWidth = width - blockWidth
-        const p = 360 / maxWidth
+        var touch = ev.touches && ev.touches[0];
+        var ee = ev || window.event;
+        var offsetLeft = captchaDragBlockDom.offsetLeft
+        var width = captchaDragSlideBarDom.offsetWidth
+        var blockWidth = captchaDragBlockDom.offsetWidth
+        var maxWidth = width - blockWidth
+        var p = 360 / maxWidth
 
         var angle = 0
         var isMoving = false
@@ -83,11 +83,11 @@ const Captcha = (function () {
             startX = ee.clientX - offsetLeft
         }
 
-        const handleMove = function(e) {
+        var handleMove = function(e) {
             isMoving = true
 
-            const mTouche = e.touches && e.touches[0];
-            const me = e || window.event;
+            var mTouche = e.touches && e.touches[0];
+            var me = e || window.event;
 
             var left = 0;
             if (mTouche) {
@@ -113,7 +113,7 @@ const Captcha = (function () {
             me.preventDefault()
         }
 
-        const handleUp = function(e) {
+        var handleUp = function(e) {
             if (!Helper.checkTargetFather(captchaDragSlideBarDom, e)) {
                 return
             }

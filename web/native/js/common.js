@@ -1,5 +1,5 @@
 
-const Ajax = (function () {
+var Ajax = (function () {
     var xhr
 
     function __initialize() {
@@ -14,7 +14,7 @@ const Ajax = (function () {
         options = options || {}
         options.type = (options.type || "GET").toUpperCase()
         options.dataType = options.dataType || "json"
-        const params = ajaxFormatParams(options.data)
+        var params = ajaxFormatParams(options.data)
 
         if(options.type === "GET"){
             xhr.open("GET", options.url+"?" + params,true);
@@ -103,7 +103,7 @@ const Ajax = (function () {
     }
 })();
 
-const Helper = (function () {
+var Helper = (function () {
     function addEventListener(el,type,fn, c) {
         if(el.addEventListener){
             el.addEventListener(type,fn, c);
@@ -162,7 +162,7 @@ const Helper = (function () {
         }
     }
 
-    const checkTargetFather = function (that, e) {
+    var checkTargetFather = function (that, e) {
         var parent = e.relatedTarget
         try{
             while(parent && parent !== that) {

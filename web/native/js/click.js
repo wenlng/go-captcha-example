@@ -1,31 +1,31 @@
 
-const Captcha = (function () {
-    const getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/click-basic"
-    const checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/click-basic"
+var Captcha = (function () {
+    var getCaptDataApi = window.GetCaptchaDataApi ? window.GetCaptchaDataApi : "/api/go-captcha-data/click-basic"
+    var checkCaptDataApi = window.CheckCaptchaDataApi ? window.CheckCaptchaDataApi : "/api/go-captcha-check-data/click-basic"
 
     var captchaKey = ""
     var maxDot = 8
     var dots = []
 
-    const hiddenClassName = "wg-cap-wrap__hidden"
-    const dialogActiveClassName = "wg-cap-dialog__active"
-    const activeDefaultClassName = "wg-cap-active__default"
-    const activeOverClassName = "wg-cap-active__over"
-    const activeErrorClassName = "wg-cap-active__error"
-    const activeSuccessClassName = "wg-cap-active__success"
+    var hiddenClassName = "wg-cap-wrap__hidden"
+    var dialogActiveClassName = "wg-cap-dialog__active"
+    var activeDefaultClassName = "wg-cap-active__default"
+    var activeOverClassName = "wg-cap-active__over"
+    var activeErrorClassName = "wg-cap-active__error"
+    var activeSuccessClassName = "wg-cap-active__success"
 
-    const captchaWrapDom        = document.querySelector("#wg-cap-dots")
-    const captchaImageDom       = document.querySelector("#wg-cap-image")
-    const captchaThumbDom       = document.querySelector("#wg-cap-thumb")
-    const captchaBtnControlDom  = document.querySelector("#wg-cap-btn-control")
-    const captchaCheckBtnDom    = document.querySelector("#wg-cap-check-btn")
-    const captchaCloseBtnDom    = document.querySelector("#wg-cap-close-btn")
-    const captchaDialogBtnDom   = document.querySelector("#wg-cap-dialog")
-    const captchaRefreshBtnDom  = document.querySelector("#wg-cap-refresh-btn")
-    const captchaDefaultBtnDom  = document.querySelector("#wg-cap-btn-default")
-    const captchaErrorBtnDom    = document.querySelector("#wg-cap-btn-error")
-    const captchaOverBtnDom     = document.querySelector("#wg-cap-btn-over")
-    const dialogDom             = document.querySelector("#wg-cap-container")
+    var captchaWrapDom        = document.querySelector("#wg-cap-dots")
+    var captchaImageDom       = document.querySelector("#wg-cap-image")
+    var captchaThumbDom       = document.querySelector("#wg-cap-thumb")
+    var captchaBtnControlDom  = document.querySelector("#wg-cap-btn-control")
+    var captchaCheckBtnDom    = document.querySelector("#wg-cap-check-btn")
+    var captchaCloseBtnDom    = document.querySelector("#wg-cap-close-btn")
+    var captchaDialogBtnDom   = document.querySelector("#wg-cap-dialog")
+    var captchaRefreshBtnDom  = document.querySelector("#wg-cap-refresh-btn")
+    var captchaDefaultBtnDom  = document.querySelector("#wg-cap-btn-default")
+    var captchaErrorBtnDom    = document.querySelector("#wg-cap-btn-error")
+    var captchaOverBtnDom     = document.querySelector("#wg-cap-btn-over")
+    var dialogDom             = document.querySelector("#wg-cap-container")
 
     function __initialize() {
         // requestCaptchaData()
@@ -54,7 +54,7 @@ const Captcha = (function () {
     }
 
     function appendDotIcon(event, x, y) {
-        const dot = document.createElement('div')
+        var dot = document.createElement('div')
         dot.setAttribute('class', 'wg-cap-wrap__dot')
         dot.setAttribute('style', 'top:' + (y - 11) + 'px; left:' + (x - 11) + 'px;')
         dot.innerHTML = '<span>'+ (dots.length + 1) +'</span>'
@@ -78,19 +78,19 @@ const Captcha = (function () {
             return
         }
 
-        const e = ev || window.event;
-        const dom = e.currentTarget
+        var e = ev || window.event;
+        var dom = e.currentTarget
 
-        const xy = Helper.getDomXY(dom)
+        var xy = Helper.getDomXY(dom)
 
-        const mouseX = e.pageX || e.clientX
-        const mouseY = e.pageY || e.clientY
+        var mouseX = e.pageX || e.clientX
+        var mouseY = e.pageY || e.clientY
 
-        const domX = xy.domX
-        const domY = xy.domY
+        var domX = xy.domX
+        var domY = xy.domY
 
-        const xPos = mouseX - domX;
-        const yPos = mouseY - domY;
+        var xPos = mouseX - domX;
+        var yPos = mouseY - domY;
 
         appendDotIcon(e, parseInt(xPos.toString()), parseInt(yPos.toString()))
         e.cancelBubble = true
@@ -107,7 +107,7 @@ const Captcha = (function () {
     }
 
     function handleClickCheck() {
-        const dotsA = []
+        var dotsA = []
         dots.forEach(function (value, key) {
             dotsA.push(value.join(","))
         })
