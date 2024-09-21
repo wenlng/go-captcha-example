@@ -75,10 +75,8 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
 <br/>
 
 
-## 🍹 Buy me a coffee
+## 👍 Sponsor
 <div>
-<a href="http://witkeycode.com/sponsor" target="_blank"><img src="http://47.104.180.148/payment-code/wxpay.png" alt="Buy Me A Coffee" style="width: 217px !important;" ></a>
-<a href="http://witkeycode.com/sponsor" target="_blank"><img src="http://47.104.180.148/payment-code/alipay.png" alt="Buy Me A Coffee" style="width: 217px !important;" ></a>
+<a href="http://gocaptcha.wencodes.com/sponsor/" target="_blank">http://gocaptcha.wencodes.com/sponsor/</a>
 </div>
-
 <br/>
