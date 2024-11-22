@@ -2,21 +2,29 @@
   <go-captcha-click
     [data]="clickData"
     [events]="clickEvents"
+    [config]="clickConfig"
+    #clickRef
   ></go-captcha-click>
   <br/>
   <go-captcha-slide
     [data]="slideData"
     [events]="slideEvents"
+    [config]="slideConfig"
+    #slideRef
   ></go-captcha-slide>
   <br/>
   <go-captcha-slide-region
     [data]="slideRegionData"
     [events]="slideRegionEvents"
+    [config]="slideRegionConfig"
+    #slideRegionRef
   ></go-captcha-slide-region>
   <br/>
   <go-captcha-rotate
     [data]="rotateData"
     [events]="rotateEvents"
+    [config]="rotateConfig"
+    #rotateRef
   ></go-captcha-rotate>
   <br/>
   <go-captcha-button [clickEvent]="handleEvent"></go-captcha-button>

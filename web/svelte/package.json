@@ -19,7 +19,11 @@
     "svelte": "^3.55.0"
   },
   "dependencies": {
-    "go-captcha-svelte": "1.0.0",
-    "sirv-cli": "^2.0.0"
+    "axios": "^1.7.7",
+    "go-captcha-svelte": "1.0.3",
+    "lodash": "^4.17.21",
+    "qs": "^6.13.1",
+    "sirv-cli": "^2.0.0",
+    "svelte-french-toast": "^1.2.0"
   }
 }

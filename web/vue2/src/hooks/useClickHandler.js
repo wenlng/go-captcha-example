@@ -10,7 +10,7 @@ import Qs from 'qs'
 import { Message } from 'element-ui';
 import { onMounted, reactive, watch } from 'vue'
 
-export const useHandler = (config) => {
+export const useHandler = (domRef, config) => {
   const state = reactive({popoverVisible: false, type: "default"})
   const cData = reactive({image: "", thumb: "", captKey: ""})
 
@@ -27,20 +27,18 @@ export const useHandler = (config) => {
   }
 
   const requestCaptchaData = () => {
+    domRef.value.clear && domRef.value.clear()
     Axios({
       method: 'get',
       url: config.getApi,
     }).then((response)=>{
       const {data = {}} = response;
-      if ((data['code'] || 0) === 0) {
-        if (Lodash.isEmpty(data)) {
-          return
-        }
+      if (!Lodash.isEmpty(data) && (data['code'] || 0) === 0) {
         cData.image = data['image_base64'] || ''
         cData.thumb = data['thumb_base64'] || ''
         cData.captKey = data['captcha_key'] || ''
       } else {
-        Message.warning(`failed get captcha data`)
+        Message.warning(`get data failed`)
       }
     }).catch((e)=>{
       console.warn(e)
@@ -68,16 +66,15 @@ export const useHandler = (config) => {
     }).then((response)=>{
       const {data = {}} = response;
       if ((data['code'] || 0) === 0) {
-        Message.success(`check captcha data success`)
+        Message.success(`check data success`)
         state.popoverVisible = false
         state.type = "success"
       } else {
-        Message.warning(`failed check captcha data`)
+        Message.warning(`check data failed`)
         state.type = "error"
       }
 
       setTimeout(() => {
-        clear()
         requestCaptchaData()
       }, 1000)
     }).catch((e)=>{

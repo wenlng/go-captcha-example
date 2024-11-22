@@ -69,7 +69,7 @@ func GetSlideBasicCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var masterImageBase64, tileImageBase64 string
-	masterImageBase64 = captData.GetMasterImage().ToBase64()
+	masterImageBase64, err = captData.GetMasterImage().ToBase64()
 	if err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
 			"code":    1,
@@ -79,7 +79,7 @@ func GetSlideBasicCaptData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tileImageBase64 = captData.GetTileImage().ToBase64()
+	tileImageBase64, err = captData.GetTileImage().ToBase64()
 	if err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
 			"code":    1,

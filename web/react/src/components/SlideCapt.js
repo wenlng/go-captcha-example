@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import GoCaptcha from 'go-captcha-react'
+// Cache Testing
+// import GoCaptcha from '../cache'
 import { Popover } from 'antd';
 import {useSlideHandler} from "../hooks/useSlideHandler";
 
 function SlideCapt() {
-  const handler = useSlideHandler({
+  const domRef = useRef(null)
+
+  const handler = useSlideHandler(domRef, {
     getApi: "/api/go-captcha-data/slide-basic",
     checkApi: "/api/go-captcha-check-data/slide-basic"
   })
@@ -15,7 +19,7 @@ function SlideCapt() {
         <GoCaptcha.Slide
           config={{
             width: 300,
-            height: 240,
+            height: 220,
             showTheme: false,
             verticalPadding: 5,
             horizontalPadding: 5,
@@ -26,6 +30,7 @@ function SlideCapt() {
             refresh: handler.refreshEvent,
             confirm: handler.confirmEvent,
           }}
+          ref={domRef}
         />
       }
       open={handler.state.popoverVisible}

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import GoCaptcha from 'go-captcha-react'
+// Cache Testing
+// import GoCaptcha from '../cache'
 import { Popover } from 'antd';
 import {useRotateHandler} from "../hooks/useRotateHandler";
 
 function RotateCapt() {
-  const handler = useRotateHandler({
+  const domRef = useRef(null)
+
+  const handler = useRotateHandler(domRef, {
     getApi: "/api/go-captcha-data/rotate-basic",
     checkApi: "/api/go-captcha-check-data/rotate-basic"
   })
@@ -15,8 +19,8 @@ function RotateCapt() {
         <GoCaptcha.Rotate
           config={{
             width: 300,
-            height: 240,
-            size: 240,
+            height: 220,
+            size: 220,
             showTheme: false,
             verticalPadding: 5,
             horizontalPadding: 5,
@@ -27,6 +31,7 @@ function RotateCapt() {
             refresh: handler.refreshEvent,
             confirm: handler.confirmEvent,
           }}
+          ref={domRef}
         />
       }
       open={handler.state.popoverVisible}

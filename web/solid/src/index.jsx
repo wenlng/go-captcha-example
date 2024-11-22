@@ -4,7 +4,11 @@ import { render } from 'solid-js/web';
 import './index.css';
 import App from './App';
 
+import axios from 'axios'
+
 const root = document.getElementById('root');
+
+axios.defaults.baseURL = 'http://47.104.180.148:8081/';
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(

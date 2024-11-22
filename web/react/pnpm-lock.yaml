@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.24.0
     version: 0.24.0
   go-captcha-react:
-    specifier: 1.0.0-pre.1
-    version: 1.0.0-pre.1(react@18.0.0)
+    specifier: 1.0.2-pre.1
+    version: 1.0.2-pre.1(react@18.0.0)
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -5015,6 +5015,7 @@ packages:
   /eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
@@ -5597,8 +5598,8 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /go-captcha-react@1.0.0-pre.1(react@18.0.0):
-    resolution: {integrity: sha512-21ecvkf/KuuVInZSV7/GmhTLWtfsJs86TCEbomek8bc7CLbMi/M2T7yU/+6d1iLjh93T7Ltq6wHIS87ej9d0/A==}
+  /go-captcha-react@1.0.2-pre.1(react@18.0.0):
+    resolution: {integrity: sha512-VMwncbwUUM+tV/Zyr55lafShXPCw2L8G9or0tp3vOBndWuuHxpP1hsaPBur5qxtzMK5VH6fMJWjb5k8mVbISig==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'

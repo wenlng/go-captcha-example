@@ -1,8 +1,31 @@
-<h1>Go Captcha Example</h1>
+<h1 style="text-align: center ">Go Captcha Example</h1>
 
-<p> ⭐️ If it helps you, please give a star.</p>
-<img src="http://47.104.180.148/go-captcha/go-captcha-v2.jpg" alt="Poster">
+<br/>
 
+<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">Go Captcha</a> is a behavior security CAPTCHA, which implements text click verification, slide verification and rotation verification.</p>
+
+<p style="text-align: center"> ⭐️ If it helps you, please give a star.</p>
+
+<br/>
+
+<div align="center"> 
+    <img src="http://47.104.180.148/go-captcha/go-captcha-v1.png" alt="Poster">
+</div>
+
+<br/>
+
+- GoCaptcha：[https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
+- GoCaptcha Document：[http://gocaptcha.wencodes.com](http://gocaptcha.wencodes.com)
+- Go Example：[https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
+- Go Assets File：[https://github.com/wenlng/go-captcha-assets](https://github.com/wenlng/go-captcha-assets)
+- Javascript Library：[https://github.com/wenlng/go-captcha-jslib](https://github.com/wenlng/go-captcha-jslib)
+- Vue Package：[https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)
+- React Package：[https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)
+- Angular Package：[https://github.com/wenlng/go-captcha-angular](https://github.com/wenlng/go-captcha-angular)
+- Svelte Package：[https://github.com/wenlng/go-captcha-svelte](https://github.com/wenlng/go-captcha-svelte)
+- Solid Package：[https://github.com/wenlng/go-captcha-solid](https://github.com/wenlng/go-captcha-solid)
+- Online Demo：[http://gocaptcha.wencodes.com/demo](http://gocaptcha.wencodes.com/demo)
+- ...
 
 <br/>
 
@@ -24,56 +47,29 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
   |-cache
   |-logic
     |-captdata
-      |-click_basic.go      // Generation text click mode captcha data
-      |-click_shape.go      // Generation shape click mode captcha data
-      |-rotate_basic.go     // Generation rotate mode captcha data
-      |-slide_basic.go      // Generation slide mode captcha data
-      |-slide_region.go     // Generation zone drag mode captcha data
+      |-click_basic.go      // Generation data for text click
+      |-click_shape.go      // Generation data for shape click
+      |-rotate_basic.go     // Generation data for rotate
+      |-slide_basic.go      // Generation data for slide
+      |-slide_region.go     // Generation data for drag region
     |-checkdata
-      |-click.go            // Check interactive data for text mode
-      |-rotate.go           // Check interactive data for rotate mode
-      |-slide.go            // Check interactive data for slide mode
-  |-static
-    |-native                // js+html+css demo
-    |-vue                   // vue3 demo
-    |-vue2                  // vue2 demo
-    |-react                 // react demo
-    |-angular               // angular demo
-    |-solid                 // solid demo
-    |-svelte                // svelte demo
+      |-click.go            // Check data for text
+      |-rotate.go           // Check data for rotate
+      |-slide.go            // Check data for slide
+|-web
+  |-native                // js+html+css example
+  |-bower                 // js+html+css example, bower tool
+  |-vue                   // vue3 example
+  |-vue2                  // vue2 example
+  |-react                 // react example
+  |-angular               // angular example
+  |-solid                 // solid example
+  |-svelte                // svelte example
 ```
 
 <br/>
 
 ---------------------
-
-<br/>
-
-<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">Go Captcha</a> is a behavior security CAPTCHA, which implements text click verification, slide verification and rotation verification.</p>
-
-<p style="text-align: center"> ⭐️ If it helps you, please give a star.</p>
-
-<br/>
-
-<div align="center"> 
-    <img src="http://47.104.180.148/go-captcha/go-captcha-v1.png" alt="Poster">
-</div>
-
-<br/>
-
-- GoCaptcha：[https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
-- GoCaptcha Document：[http://gocaptcha.wencodes.com](http://gocaptcha.wencodes.com)
-- Go Example：[https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
-- Go Assets：[https://github.com/wenlng/go-captcha-assets](https://github.com/wenlng/go-captcha-assets)
-- Vue Package：[https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)
-- React Package：[https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)
-- Angular Package：[https://github.com/wenlng/go-captcha-angular](https://github.com/wenlng/go-captcha-angular)
-- Svelte Package：[https://github.com/wenlng/go-captcha-svelte](https://github.com/wenlng/go-captcha-svelte)
-- Solid Package：[https://github.com/wenlng/go-captcha-solid](https://github.com/wenlng/go-captcha-solid)
-- Online Demo：[http://gocaptcha.wencodes.com/demo](http://gocaptcha.wencodes.com/demo)
-- ...
-<br/>
-
 
 ## 👍 Sponsor
 <div>

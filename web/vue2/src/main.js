@@ -5,6 +5,10 @@ import App from './App.vue'
 import "go-captcha-vue/dist/style.css"
 import GoCaptcha from "go-captcha-vue"
 
+// Cache Testing
+// import "../cache/dist/style.css"
+// import GoCaptcha from "../cache"
+
 // Element
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'

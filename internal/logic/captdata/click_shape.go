@@ -64,7 +64,7 @@ func GetClickShapesCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var masterImageBase64, thumbImageBase64 string
-	masterImageBase64 = captData.GetMasterImage().ToBase64()
+	masterImageBase64, err = captData.GetMasterImage().ToBase64()
 	if err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
 			"code":    1,
@@ -74,7 +74,7 @@ func GetClickShapesCaptData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	thumbImageBase64 = captData.GetThumbImage().ToBase64()
+	thumbImageBase64, err = captData.GetThumbImage().ToBase64()
 	if err != nil {
 		bt, _ := json.Marshal(map[string]interface{}{
 			"code":    1,

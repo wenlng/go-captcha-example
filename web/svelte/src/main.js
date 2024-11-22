@@ -1,5 +1,9 @@
 import App from './App.svelte';
 
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+
 const app = new App({
 	target: document.body,
 	props: {

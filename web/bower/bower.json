@@ -1,0 +1,23 @@
+{
+  "name": "native-demo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "awen <wengaolng@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wenlng/go-captcha-example",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "axios": "axios/axios#^1.7.7",
+    "go-captcha-jslib": "wenlng/go-captcha-jslib#1.0.4",
+    "qs": "ljharb/qs#^6.13.1",
+    "toastify-js": "apvarun/toastify-js#^1.12.0"
+  }
+}

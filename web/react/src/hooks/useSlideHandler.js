@@ -4,13 +4,13 @@
  * @Email wengaolng@gmail.com
  **/
 
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import Lodash from "lodash";
 import Axios from 'axios'
 import { message } from 'antd';
 import Qs from 'qs'
 
-export const useSlideHandler = (config) => {
+export const useSlideHandler = (domRef, config) => {
   const [state, setState] = useState({})
   const [data, setData] = useState({})
 
@@ -27,15 +27,13 @@ export const useSlideHandler = (config) => {
   }, [state])
 
   const requestCaptchaData = useCallback(() => {
+    domRef.current.clear && domRef.current.clear()
     Axios({
       method: 'get',
       url: config.getApi,
     }).then((response)=>{
       const {data = {}} = response;
-      if ((data['code'] || 0) === 0) {
-        if (Lodash.isEmpty(data)) {
-          return
-        }
+      if (!Lodash.isEmpty(data) && (data['code'] || 0) === 0) {
         setData({
           image: data['image_base64'] || '',
           thumb:  data['tile_base64'] || '',
@@ -76,7 +74,6 @@ export const useSlideHandler = (config) => {
       }
 
       setTimeout(() => {
-        clear()
         requestCaptchaData()
       }, 1000)
     }).catch((e)=>{

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import GoCaptcha from 'go-captcha-react'
+// Cache Testing
+// import GoCaptcha from '../cache'
 import { Popover } from 'antd';
 import {useClickHandler} from "../hooks/useClickHandler";
 
 function ClickTextCapt() {
-  const handler = useClickHandler({
+  const domRef = useRef(null)
+
+  const handler = useClickHandler(domRef, {
     getApi: "/api/go-captcha-data/click-basic",
     checkApi: "/api/go-captcha-check-data/click-basic"
   })
@@ -15,10 +19,11 @@ function ClickTextCapt() {
         <GoCaptcha.Click
           config={{
             width: 300,
-            height: 240,
+            height: 220,
             showTheme: false,
             verticalPadding: 5,
             horizontalPadding: 5,
+            dotSize: 24,
           }}
           data={handler.data}
           events={{
@@ -26,6 +31,7 @@ function ClickTextCapt() {
             refresh: handler.refreshEvent,
             confirm: handler.confirmEvent,
           }}
+          ref={domRef}
         />
       }
       open={handler.state.popoverVisible}

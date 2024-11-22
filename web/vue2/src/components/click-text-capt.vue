@@ -7,12 +7,17 @@
       refresh: handler.refreshEvent,
       confirm: handler.confirmEvent,
     }"
+    ref="domRef"
   />
 </template>
 
 <script setup>
 import {useHandler} from "../hooks/useClickHandler";
-const handler = useHandler({
+import {ref} from "vue";
+
+const domRef = ref(null)
+
+const handler = useHandler(domRef, {
   getApi: "/api/go-captcha-data/click-basic",
   checkApi: "/api/go-captcha-check-data/click-basic"
 })

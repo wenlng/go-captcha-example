@@ -4,13 +4,13 @@
  * @Email wengaolng@gmail.com
  **/
 
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import Lodash from "lodash";
 import Axios from 'axios'
 import { message } from 'antd';
 import Qs from 'qs'
 
-export const useClickHandler = (config) => {
+export const useClickHandler = (domRef, config) => {
   const [state, setState] = useState({popoverVisible: false})
   const [data, setData] = useState({})
 
@@ -20,7 +20,6 @@ export const useClickHandler = (config) => {
 
   const visibleChangeEvent = useCallback((visible) => {
     setState({...state, popoverVisible: visible})
-    console.log("<<<<<<<<<")
   }, [state])
 
   const closeEvent = useCallback(() => {
@@ -28,15 +27,13 @@ export const useClickHandler = (config) => {
   }, [state])
 
   const requestCaptchaData = useCallback(() => {
+    domRef.current.clear && domRef.current.clear()
     Axios({
       method: 'get',
       url: config.getApi,
     }).then((response)=>{
       const {data = {}} = response;
-      if ((data['code'] || 0) === 0) {
-        if (Lodash.isEmpty(data)) {
-          return
-        }
+      if (!Lodash.isEmpty(data) && (data['code'] || 0) === 0) {
         setData({
           image: data['image_base64'] || '',
           thumb:  data['thumb_base64'] || '',
@@ -77,7 +74,6 @@ export const useClickHandler = (config) => {
       }
 
       setTimeout(() => {
-        clear()
         requestCaptchaData()
       }, 1000)
     }).catch((e)=>{

@@ -1,0 +1,3 @@
+{
+  "ignorePatterns": ["cache", "dist", "node_modules"]
+}

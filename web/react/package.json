@@ -5,7 +5,7 @@
   "dependencies": {
     "antd": "^4.24.16",
     "axios": "^0.24.0",
-    "go-captcha-react": "1.0.0",
+    "go-captcha-react": "1.0.2",
     "lodash": "^4.17.21",
     "qs": "^6.12.1",
     "react": "^18.0.0",
@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:9001"
+  "proxy": "http://47.104.180.148:8081/"
 }

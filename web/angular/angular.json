@@ -26,7 +26,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "go-captcha-angular/css/go-captcha.css"
+              "go-captcha-angular/css/go-captcha.css",
+              "node_modules/@ngxpert/hot-toast/src/styles/styles.css"
             ],
             "scripts": []
           },

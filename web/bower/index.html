@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8"/>
+    <title>GoCaptcha 行为验证码</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./bower_components/go-captcha-jslib/dist/gocaptcha.global.css">
+    <link rel="stylesheet" type="text/css" href="./bower_components/toastify-js/src/toastify.css">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            color: #3C3C3C;
+            background: #EBF3FB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .example {
+            padding: 40px 0;
+        }
+
+        .box{
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="example">
+    <div class="box" id="click-wrap"></div>
+    <div class="box" id="slide-wrap"></div>
+    <div class="box" id="slide-region-wrap"></div>
+    <div class="box" id="rotate-wrap"></div>
+    <div class="box" id="button-wrap"></div>
+</div>
+
+<!-- GoCaptcha -->
+<script type="text/javascript" src="./bower_components/go-captcha-jslib/dist/gocaptcha.global.js"></script>
+<!-- Http Request -->
+<script src="./bower_components/axios/dist/axios.js"></script>
+<!-- Request parameter serialization-->
+<script src="./bower_components/qs/dist/qs.js"></script>
+<!-- Toast Tip -->
+<script src="./bower_components/toastify-js/src/toastify.js"></script>
+<!-- Example -->
+<script src="./js/capts.js"></script>
+
+</body>
+</html>
