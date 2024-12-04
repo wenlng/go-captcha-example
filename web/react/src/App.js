@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
-import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.min.css';
+import "@arco-design/web-react/dist/css/arco.css";
 import ClickTextCapt from "./components/ClickTextCapt";
 import ClickShapeCapt from "./components/ClickShapeCapt";
 import SlideCapt from "./components/SlideCapt";

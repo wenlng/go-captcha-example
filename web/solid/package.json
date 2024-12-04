@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "go-captcha-solid": "1.0.2",
+    "go-captcha-solid": "1.0.3",
     "lodash": "^4.17.21",
     "qs": "^6.13.1",
     "solid-js": "^1.8.11",

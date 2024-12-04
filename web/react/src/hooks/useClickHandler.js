@@ -7,7 +7,7 @@
 import {useCallback, useEffect, useRef, useState} from "react";
 import Lodash from "lodash";
 import Axios from 'axios'
-import { message } from 'antd';
+import { Message } from '@arco-design/web-react';
 import Qs from 'qs'
 
 export const useClickHandler = (domRef, config) => {
@@ -40,7 +40,7 @@ export const useClickHandler = (domRef, config) => {
           captKey:  data['captcha_key'] || ''
         })
       } else {
-        message.warning(`failed get captcha data`)
+        Message.warning(`failed get captcha data`)
       }
     }).catch((e)=>{
       console.warn(e)
@@ -66,10 +66,10 @@ export const useClickHandler = (domRef, config) => {
     }).then((response)=>{
       const {data = {}} = response;
       if ((data['code'] || 0) === 0) {
-        message.success(`check captcha data success`)
+        Message.success(`check captcha data success`)
         setState({...state, popoverVisible: false, type: "success"})
       } else {
-        message.warning(`failed check captcha data`)
+        Message.warning(`failed check captcha data`)
         setState({...state, type: "error"})
       }
 
@@ -82,9 +82,9 @@ export const useClickHandler = (domRef, config) => {
   }, [data, state, setState, config.checkApi, requestCaptchaData])
 
   useEffect(() => {
-    if (state.popoverVisible) {
+    // if (state.popoverVisible) {
       requestCaptchaData()
-    }
+    // }
   }, [state.popoverVisible, requestCaptchaData])
 
   return {

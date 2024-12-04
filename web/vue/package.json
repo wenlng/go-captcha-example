@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
-    "go-captcha-vue": "2.0.4",
+    "go-captcha-vue": "2.0.5",
     "lodash": "^4.17.21",
     "naive-ui": "^2.38.2",
     "qs": "^6.12.1",

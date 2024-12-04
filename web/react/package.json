@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^4.24.16",
+    "@arco-design/web-react": "^2.65.0",
     "axios": "^0.24.0",
-    "go-captcha-react": "1.0.2",
+    "go-captcha-react": "1.0.3",
     "lodash": "^4.17.21",
     "qs": "^6.12.1",
     "react": "^18.0.0",

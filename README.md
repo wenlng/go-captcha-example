@@ -1,8 +1,15 @@
-<h1 style="text-align: center ">Go Captcha Example</h1>
+<div align="center">
+<img width="120" style="padding-top: 50px; margin: 0;" src="http://47.104.180.148/go-captcha/gocaptcha_logo.svg?v=1"/>
+<h1 style="margin: 0; padding: 0">Go Captcha</h1>
+</div>
+
+<h3 style="text-align: center ">Go Captcha Example Projects</h3>
 
 <br/>
 
-<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">Go Captcha</a> is a behavior security CAPTCHA, which implements text click verification, slide verification and rotation verification.</p>
+> English | [中文](README_zh.md)
+> 
+<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">Go Captcha</a> is a behavior CAPTCHA, which implements text click verification, slide verification and rotation verification.</p>
 
 <p style="text-align: center"> ⭐️ If it helps you, please give a star.</p>
 
@@ -57,22 +64,16 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
       |-rotate.go           // Check data for rotate
       |-slide.go            // Check data for slide
 |-web
-  |-native                // js+html+css example
-  |-bower                 // js+html+css example, bower tool
-  |-vue                   // vue3 example
-  |-vue2                  // vue2 example
-  |-react                 // react example
-  |-angular               // angular example
-  |-solid                 // solid example
-  |-svelte                // svelte example
+  |-native                // Js+Html+Css example
+  |-bower                 // Js+Html+Css example, bower tool
+  |-vue                   // Vue3 example
+  |-vue2                  // Vue2 example
+  |-react                 // React example
+  |-angular               // Angular example
+  |-solid                 // Solid example
+  |-svelte                // Svelte example
 ```
 
 <br/>
 
----------------------
 
-## 👍 Sponsor
-<div>
-<a href="http://gocaptcha.wencodes.com/sponsor/" target="_blank">http://gocaptcha.wencodes.com/sponsor/</a>
-</div>
-<br/>
