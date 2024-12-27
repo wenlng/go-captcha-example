@@ -75,7 +75,6 @@ func RunTimedTask() {
 
 func checkCacheOvertimeFile() {
 	mux.RLock()
-	defer mux.RUnlock()
 	var keys = make([]string, 0)
 	for key, data := range cachemaps {
 		ex := time.Now().Unix() - data.createAt.Unix()
@@ -83,6 +82,7 @@ func checkCacheOvertimeFile() {
 			keys = append(keys, key)
 		}
 	}
+	mux.RUnlock()
 
 	ClearCaches(keys)
 }
