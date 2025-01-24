@@ -49,7 +49,7 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
 
 ### Directory structure
 ```text
-|-internal
+|-internal                  // Golang example
   |-app
   |-cache
   |-logic

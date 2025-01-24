@@ -379,10 +379,7 @@ function toastError(msg) {
 // Button Example
 ;(function (goCaptcha){
   const el = document.getElementById("button-wrap");
-  const capt = new goCaptcha.Button({
-    width: 300,
-    height: 28,
-  });
+  const capt = new goCaptcha.Button();
   capt.mount(el)
   capt.setState({
     clickEvent: () => {

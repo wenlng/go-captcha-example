@@ -51,7 +51,7 @@ go run main.go
 
 ### 目录结构
 ```text
-|-internal
+|-internal                  // Golang 实例
   |-app
   |-cache
   |-logic
