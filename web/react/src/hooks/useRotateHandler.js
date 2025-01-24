@@ -81,7 +81,7 @@ export const useRotateHandler = (domRef, config) => {
     // if (state.popoverVisible) {
       requestCaptchaData()
     // }
-  }, [state.popoverVisible, requestCaptchaData])
+  }, [])
 
   return {
     state,

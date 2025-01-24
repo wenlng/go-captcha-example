@@ -4871,10 +4871,10 @@ globby@^11.0.4, globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
-go-captcha-react@1.0.3-pre:
-  version "1.0.3-pre"
-  resolved "https://registry.npmmirror.com/go-captcha-react/-/go-captcha-react-1.0.3-pre.tgz#88e3e38ef2df1e6ff248e3b3f667222ca5c0dbed"
-  integrity sha512-awDWetLPs+1k9RG/A2vSjphrmPxCj2FZZ7C01Ea9Wd4sxBH1cBE/m8KT1qnjyBzyc6cyl8yxv/Ixln+NhP1R8Q==
+go-captcha-react@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/go-captcha-react/-/go-captcha-react-1.0.3.tgz#7681eeaad1319c9589cc9ac4f5d7c5ecb83df74f"
+  integrity sha512-bLPFtgCN80UHeTupNoNQmKvMkN9JPRxdr8qYj2qyJckrlKRnitVdqK5YtOaymJadn9nyUuUdaXdOMhcMZqIegQ==
   dependencies:
     classnames "^2.5.1"
 

@@ -17,8 +17,7 @@ var slideBasicCapt slide.Captcha
 
 func init() {
 	builder := slide.NewBuilder(
-		//slide.WithGenGraphNumber(2),
-		slide.WithEnableGraphVerticalRandom(true),
+	//slide.WithGenGraphNumber(2),
 	)
 
 	// background images

@@ -85,7 +85,7 @@ export const useClickHandler = (domRef, config) => {
     // if (state.popoverVisible) {
       requestCaptchaData()
     // }
-  }, [state.popoverVisible, requestCaptchaData])
+  }, [])
 
   return {
     state,
