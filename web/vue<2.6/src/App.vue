@@ -11,7 +11,7 @@ we have not included Vue versions lower than 2.7 in the development plan.
 This example demonstrates the solution using the JS native library method.
  */
 ///////////////////////////////////////////////////////////
-import { GoCaptcha } from "go-captcha-jslib";
+import GoCaptcha from "go-captcha-jslib";
 import axios from 'axios'
 import Qs from 'qs'
 
@@ -30,11 +30,19 @@ export default {
   created() {},
   mounted() {
     // const el = document.getElementById("captcha");
-    console.log(this.$refs.captcha)
+
+    // new GoCaptcha.Button()
+    // new GoCaptcha.Click()
+    // new GoCaptcha.Slide()
+    // new GoCaptcha.SlideRegion()
+    // new GoCaptcha.Rotate()
+
     this.capt = new GoCaptcha.Slide({
       width: 300,
       height: 220,
     })
+
+    // this.capt.mount(el)
     this.capt.mount(this.$refs.captcha)
 
     const self = this

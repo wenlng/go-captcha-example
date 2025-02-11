@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "element-ui": "^2.15.6",
-    "go-captcha-jslib": "1.0.6",
+    "go-captcha-jslib": "1.0.7",
     "lodash": "^4.17.21",
     "qs": "^6.12.1",
     "vue": "^2.6.12",
