@@ -1,5 +1,5 @@
 {
-  "name": "native-demo",
+  "name": "bower-demo",
   "description": "",
   "main": "",
   "authors": [
@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "axios": "axios/axios#^1.7.7",
-    "go-captcha-jslib": "wenlng/go-captcha-jslib#1.0.5",
+    "go-captcha-jslib": "wenlng/go-captcha-jslib#1.0.6",
     "qs": "ljharb/qs#^6.13.1",
     "toastify-js": "apvarun/toastify-js#^1.12.0"
   }
