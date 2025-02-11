@@ -1,6 +1,6 @@
 
 <template>
-  <div id="captcha"></div>
+  <div id="captcha" ref="captcha"></div>
 </template>
 
 <script>
@@ -29,12 +29,13 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    const el = document.getElementById("captcha");
+    // const el = document.getElementById("captcha");
+    console.log(this.$refs.captcha)
     this.capt = new GoCaptcha.Slide({
       width: 300,
       height: 220,
     })
-    this.capt.mount(el)
+    this.capt.mount(this.$refs.captcha)
 
     const self = this
     this.capt.setEvents({
