@@ -27,10 +27,7 @@ export default {
   },
   watch: {},
   computed: {},
-  created() {},
-  mounted() {
-    // const el = document.getElementById("captcha");
-
+  created() {
     // new GoCaptcha.Button()
     // new GoCaptcha.Click()
     // new GoCaptcha.Slide()
@@ -41,9 +38,6 @@ export default {
       width: 300,
       height: 220,
     })
-
-    // this.capt.mount(el)
-    this.capt.mount(this.$refs.captcha)
 
     const self = this
     this.capt.setEvents({
@@ -62,6 +56,15 @@ export default {
       }
     })
     this.requestCaptchaData()
+  },
+  mounted() {
+    // const el = document.getElementById("captcha");
+    // this.capt.mount(el)
+
+    this.capt.mount(this.$refs.captcha)
+  },
+  beforeMount() {
+    this.capt.destroy()
   },
   methods: {
     confirmEvent(point) {
