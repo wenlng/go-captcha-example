@@ -863,10 +863,10 @@ globals@^11.1.0:
   resolved "https://registry.npmjs.org/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
   integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
-go-captcha-jslib@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/go-captcha-jslib/-/go-captcha-jslib-1.0.7.tgz#bb3ab01473cd351018bdf1f63d5a5a69dca784bd"
-  integrity sha512-6GGWZ8H1fINGGFNkEcqnBbL/lAXtTLZMB5zZwS8TQz8zjP3s2iLYv1YLeAmyCFWyMIeEbjuWDJJEfz8urlOOtA==
+go-captcha-jslib@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/go-captcha-jslib/-/go-captcha-jslib-1.0.8.tgz#78611837fd6f5d6ef6b68af0db3b650e57723a86"
+  integrity sha512-815E2f7fnb7UHL7kC29y2IawLE2A2Fz6Lx/1aRkb8oA5ByN1D+TSwk9jbbWFoCe2Jxh2XVkbviR2iYH76Gl28g==
 
 gopd@^1.2.0:
   version "1.2.0"
