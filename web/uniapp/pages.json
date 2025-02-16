@@ -1,0 +1,42 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uniapp captcha",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#A0A0A0",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"float": "left",
+								"fontSrc": "./static/iconfont/iconfont.ttf",
+								"text": " \ue62d"
+							},
+							{
+								"float": "right",
+								"fontSrc": "./static/iconfont/iconfont.ttf",
+								"text": "\ue627 "
+							}
+						]
+					}
+				}
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "captcha",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#A0A0A0"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#a0a0a0",
+		"backgroundColor": "#eff3f9",
+		"selectedColor": "#3e7cff",
+		"borderStyle": "white"
+	}
+}

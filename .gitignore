@@ -15,6 +15,7 @@
 # vendor/
 .cache/
 bower_components
+unpackage
 .idea/
 .DS_Store
 .vscode

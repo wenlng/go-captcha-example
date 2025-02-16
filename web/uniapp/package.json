@@ -1,0 +1,17 @@
+{
+  "name": "uniapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "awen",
+  "license": "ISC",
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1",
+    "go-captcha-uni": "^1.0.1",
+    "lodash": "^4.17.21",
+    "qs": "^6.14.0"
+  }
+}

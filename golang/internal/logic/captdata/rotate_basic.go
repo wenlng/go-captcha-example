@@ -72,12 +72,14 @@ func GetRotateBasicCaptData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	dotsByte, _ := json.Marshal(blockData)
-	key := helper.StringToMD5(string(dotsByte))
-	cache.WriteCache(key, dotsByte)
+	blockByte, _ := json.Marshal(blockData)
+	key := helper.StringToMD5(string(blockByte))
+	cache.WriteCache(key, blockByte)
+	fmt.Println("block>>>>>", string(blockByte))
 
 	bt, _ := json.Marshal(map[string]interface{}{
 		"code":         0,
+		"thumb_size":   blockData.Width,
 		"captcha_key":  key,
 		"image_base64": masterImageBase64,
 		"thumb_base64": thumbImageBase64,

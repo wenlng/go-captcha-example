@@ -1,6 +1,5 @@
 <script setup>
 import {useGithub} from "@/hooks/useGithub";
-import Demo from "./Demo.vue";
 import ClickTextCapt from "./components/click-text-capt.vue";
 import ClickShapeCapt from "./components/click-shape-capt.vue";
 import SlideCapt from "./components/slide-capt.vue";
@@ -12,7 +11,6 @@ useGithub()
 
 <template>
   <div class="container">
-    <Demo/>
     <n-message-provider>
       <div class="item"> <click-text-capt /> </div>
       <div class="item"> <click-shape-capt /> </div>

@@ -34,6 +34,7 @@
 - Angular Package：[https://github.com/wenlng/go-captcha-angular](https://github.com/wenlng/go-captcha-angular)
 - Svelte Package：[https://github.com/wenlng/go-captcha-svelte](https://github.com/wenlng/go-captcha-svelte)
 - Solid Package：[https://github.com/wenlng/go-captcha-solid](https://github.com/wenlng/go-captcha-solid)
+- UniApp Module：[https://github.com/wenlng/go-captcha-uni](https://github.com/wenlng/go-captcha-uni)
 - ...
 
 <br/>
@@ -51,29 +52,32 @@ go run main.go
 
 ### 目录结构
 ```text
-|-internal                  // Golang 实例
-  |-app
-  |-cache
-  |-logic
-    |-captdata
-      |-click_basic.go      // 生成文本点选验证码数据
-      |-click_shape.go      // 生成图形点选验证码数据
-      |-rotate_basic.go     // 生成旋转验证码数据
-      |-slide_basic.go      // 生成滑动验证码数据
-      |-slide_region.go     // 生成拖拽验证码数据
-    |-checkdata
-      |-click.go            // 点选验证码校验
-      |-rotate.go           // 旋转验证码校验
-      |-slide.go            // 滑动/拖拽验证码校验
+|-golang  // Golang 实例
+    |-internal                 
+      |-app
+      |-cache
+      |-logic
+        |-captdata
+          |-click_basic.go      // 生成文本点选验证码数据
+          |-click_shape.go      // 生成图形点选验证码数据
+          |-rotate_basic.go     // 生成旋转验证码数据
+          |-slide_basic.go      // 生成滑动验证码数据
+          |-slide_region.go     // 生成拖拽验证码数据
+        |-checkdata
+          |-click.go            // 点选验证码校验
+          |-rotate.go           // 旋转验证码校验
+          |-slide.go            // 滑动/拖拽验证码校验
 |-web
   |-native                // Javascript 原生实例
   |-bower                 // Javascript 原生实例，bower工具管理
   |-vue                   // Vue3 实例
-  |-vue2                  // Vue2 实例
+  |-vue2                  // Vue2 实例 vue2.7~vue3.0
+  |-vue<2.7               // Vue2 实例 vue2.0~vue2.7
   |-react                 // React 实例
   |-angular               // Angular 实例
   |-solid                 // Solid 实例
   |-svelte                // Svelte 实例
+  |-uniapp                // uniApp 实例
 ```
 
 <br/>
