@@ -3456,10 +3456,10 @@ globby@^11.0.2, globby@^11.0.3:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
-go-captcha-vue@1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/go-captcha-vue/-/go-captcha-vue-1.0.5.tgz#091f7ee20990c253b87c71e9d4af728ba07c691e"
-  integrity sha512-va1N4mEP0UikVtTOYYKJmX3aOSlDz0ANRnPUwaw4xtzxYYjAImtxNekiTH6EbQfFH2Z9U1QB/+hPKpNzdi8NJg==
+go-captcha-vue@1.0.6-beta:
+  version "1.0.6-beta"
+  resolved "https://registry.npmjs.org/go-captcha-vue/-/go-captcha-vue-1.0.6-beta.tgz#f257cdce0307847539827d17378bb4c3a3321d3c"
+  integrity sha512-Bu4ksVdddlJKnLFwT84qzxWE5kvKnL+y2scWr6IyvC/rw0TmfqjIhayrW07l905OhlKoSe5s5e4uLwJETqRWUw==
 
 gopd@^1.0.1, gopd@^1.2.0:
   version "1.2.0"

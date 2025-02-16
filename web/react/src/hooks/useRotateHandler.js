@@ -37,6 +37,7 @@ export const useRotateHandler = (domRef, config) => {
         setData({
           image: data['image_base64'] || '',
           thumb: data['thumb_base64'] || '',
+          thumbSize: data['thumb_size'] || 0,
           captKey: data['captcha_key'] || '',
         })
       } else {

@@ -77,6 +77,7 @@ go run main.go
   |-angular               // Angular 实例
   |-solid                 // Solid 实例
   |-svelte                // Svelte 实例
+|-app
   |-uniapp                // uniApp 实例
 ```
 

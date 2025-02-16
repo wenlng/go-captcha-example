@@ -187,9 +187,9 @@ export class AppComponent {
 
   ////////////////////////////////
   rotateData = {
-    angle: 20,
     image: '',
     thumb: '',
+    thumbSize: 0,
   }
 
   rotateEvents = {
@@ -225,9 +225,9 @@ export class AppComponent {
   requestRotateData(){
     this.rotateRef.clear && this.rotateRef.clear()
     this.rotateService.requestData((res) => {
-      this.rotateData.angle = res.angle || 0
       this.rotateData.image = res.image
       this.rotateData.thumb = res.thumb
+      this.rotateData.thumbSize = res.thumbSize || 0
     })
   }
 

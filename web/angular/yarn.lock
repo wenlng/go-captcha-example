@@ -3598,10 +3598,10 @@ globby@^13.1.1:
     merge2 "^1.4.1"
     slash "^4.0.0"
 
-go-captcha-angular@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/go-captcha-angular/-/go-captcha-angular-1.0.2.tgz#62f3b6f079e8835e992527f85ce3b764520357dd"
-  integrity sha512-DUP9HYM/1lEgmdDVJb7HrG015tl7q0AyShuIEyt2lpf22otAj4hyE1RUlsJ2KvK5FfSVrRCw99MbtNjhmy5nJQ==
+go-captcha-angular@1.0.4-beta-1:
+  version "1.0.4-beta-1"
+  resolved "https://registry.npmjs.org/go-captcha-angular/-/go-captcha-angular-1.0.4-beta-1.tgz#2698442ce54eeefd71664f354b154c5c41283741"
+  integrity sha512-a2kID/mFo689R0wJzxsNrv5RXT7FF4OqZ588gvVdO8X0yBiFjqjHj3CmhXaor+NXG4W0VJNv9E3hOu8NtKluow==
   dependencies:
     tslib "^2.3.0"
 

@@ -121,5 +121,5 @@ export default {
 </script>
 
 <style scoped>
-/* css样式 */
+/* css */
 </style>

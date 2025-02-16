@@ -21,7 +21,7 @@
     "@ngneat/overview": "6.0.0",
     "@ngxpert/hot-toast": "^1.0.0",
     "axios": "^1.7.7",
-    "go-captcha-angular": "1.0.3",
+    "go-captcha-angular": "1.0.4",
     "lodash": "^4.17.21",
     "qs": "^6.13.0",
     "rxjs": "~6.6.0",

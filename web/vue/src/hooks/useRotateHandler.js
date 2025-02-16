@@ -38,6 +38,7 @@ export const useHandler = (domRef, config) => {
       if (!Lodash.isEmpty(data) && (data['code'] || 0) === 0) {
         cData.image = data['image_base64'] || ''
         cData.thumb = data['thumb_base64'] || ''
+        cData.thumbSize = data['thumb_size'] || 0
         cData.captKey = data['captcha_key'] || ''
       } else {
        message.warning(`get data failed`)

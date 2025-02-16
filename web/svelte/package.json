@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "go-captcha-svelte": "1.0.4",
+    "go-captcha-svelte": "1.0.5",
     "lodash": "^4.17.21",
     "qs": "^6.13.1",
     "sirv-cli": "^2.0.0",

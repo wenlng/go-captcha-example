@@ -73,6 +73,8 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
   |-angular               // Angular example
   |-solid                 // Solid example
   |-svelte                // Svelte example
+|-app
+  |-uniapp                // UniApp example
 ```
 
 <br/>
