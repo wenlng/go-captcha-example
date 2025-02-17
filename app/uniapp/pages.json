@@ -32,11 +32,5 @@
 		"navigationBarBackgroundColor": "#FFFFFF",
 		"backgroundColor": "#A0A0A0"
 	},
-	"uniIdRouter": {},
-	"tabBar": {
-		"color": "#a0a0a0",
-		"backgroundColor": "#eff3f9",
-		"selectedColor": "#3e7cff",
-		"borderStyle": "white"
-	}
+	"uniIdRouter": {}
 }
