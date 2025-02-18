@@ -153,7 +153,8 @@ func GetClickBasicCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	dotsByte, _ := json.Marshal(dotData)
-	key := helper.StringToMD5(string(dotsByte))
+	key := helper.GenUniqueId()
+	//key := helper.StringToMD5(string(dotsByte))
 	cache.WriteCache(key, dotsByte)
 	fmt.Println("dot>>>>>", string(dotsByte))
 

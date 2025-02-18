@@ -89,7 +89,8 @@ func GetSlideRegionCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	blockByte, _ := json.Marshal(blockData)
-	key := helper.StringToMD5(string(blockByte))
+	key := helper.GenUniqueId()
+	//key := helper.StringToMD5(string(blockByte))
 	cache.WriteCache(key, blockByte)
 
 	bt, _ := json.Marshal(map[string]interface{}{

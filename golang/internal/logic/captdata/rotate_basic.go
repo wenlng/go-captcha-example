@@ -73,7 +73,8 @@ func GetRotateBasicCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	blockByte, _ := json.Marshal(blockData)
-	key := helper.StringToMD5(string(blockByte))
+	key := helper.GenUniqueId()
+	//key := helper.StringToMD5(string(blockByte))
 	cache.WriteCache(key, blockByte)
 	fmt.Println("block>>>>>", string(blockByte))
 

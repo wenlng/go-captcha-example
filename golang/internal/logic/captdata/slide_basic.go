@@ -90,7 +90,8 @@ func GetSlideBasicCaptData(w http.ResponseWriter, r *http.Request) {
 	}
 
 	dotsByte, _ := json.Marshal(blockData)
-	key := helper.StringToMD5(string(dotsByte))
+	key := helper.GenUniqueId()
+	//key := helper.StringToMD5(string(dotsByte))
 	cache.WriteCache(key, dotsByte)
 
 	bt, _ := json.Marshal(map[string]interface{}{
