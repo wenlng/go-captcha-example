@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wenlng/go-captcha-assets/resources/images"
+	"github.com/wenlng/go-captcha-assets/resources/images_v2"
 	"github.com/wenlng/go-captcha/v2/base/option"
 	"github.com/wenlng/go-captcha/v2/rotate"
 )

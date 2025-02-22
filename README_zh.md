@@ -22,23 +22,31 @@
 </div>
 
 <br/>
+<hr/>
+<br/>
 
-- GoCaptcha：[https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)
-- GoCaptcha 文档：[http://gocaptcha.wencodes.com](http://gocaptcha.wencodes.com)
-- Golang 内嵌素材资源：[https://github.com/wenlng/go-captcha-assets](https://github.com/wenlng/go-captcha-assets)
-- Golang/前端的实例：[https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example)
-- 在线演示 URL：[http://gocaptcha.wencodes.com/demo/](http://gocaptcha.wencodes.com/demo/)
-- Javascript 原生库：[https://github.com/wenlng/go-captcha-jslib](https://github.com/wenlng/go-captcha-jslib)
-- Vue Package：[https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)
-- React Package：[https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)
-- Angular Package：[https://github.com/wenlng/go-captcha-angular](https://github.com/wenlng/go-captcha-angular)
-- Svelte Package：[https://github.com/wenlng/go-captcha-svelte](https://github.com/wenlng/go-captcha-svelte)
-- Solid Package：[https://github.com/wenlng/go-captcha-solid](https://github.com/wenlng/go-captcha-solid)
-- UniApp Module：[https://github.com/wenlng/go-captcha-uni](https://github.com/wenlng/go-captcha-uni)
-- ...
+## 链接索引
+
+| 名称                                                                 | 链接                                                                                        |
+|--------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| GoCaptcha 文档                  | [http://gocaptcha.wencodes.com](http://gocaptcha.wencodes.com)                            |
+| 在线演示                | [http://gocaptcha.wencodes.com/demo/](http://gocaptcha.wencodes.com/demo/)                |
+| Golang + 前端 + APP实例 | [https://github.com/wenlng/go-captcha-example](https://github.com/wenlng/go-captcha-example) |
+| Golang 验证码           | [https://github.com/wenlng/go-captcha](https://github.com/wenlng/go-captcha)              |
+| Golang 内嵌素材资源       | [https://github.com/wenlng/go-captcha-assets](https://github.com/wenlng/go-captcha-assets) |
+| Javascript 验证码       | [https://github.com/wenlng/go-captcha-jslib](https://github.com/wenlng/go-captcha-jslib)  |
+| Vue 验证码               | [https://github.com/wenlng/go-captcha-vue](https://github.com/wenlng/go-captcha-vue)      |
+| React 验证码           | [https://github.com/wenlng/go-captcha-react](https://github.com/wenlng/go-captcha-react)  |
+| Angular 验证码       | [https://github.com/wenlng/go-captcha-angular](https://github.com/wenlng/go-captcha-angular) |
+| Svelte 验证码     | [https://github.com/wenlng/go-captcha-svelte](https://github.com/wenlng/go-captcha-svelte) |
+| Solid 验证码         | [https://github.com/wenlng/go-captcha-solid](https://github.com/wenlng/go-captcha-solid)  |
+| UniApp 验证码          | [https://github.com/wenlng/go-captcha-uni](https://github.com/wenlng/go-captcha-uni)      |
+| ...                                                                       |       |
 
 <br/>
 
+
+### 下载运行
 ```shell
 git clone https://github.com/wenlng/go-captcha-example.git
 cd go-captcha-example
