@@ -78,10 +78,10 @@ get-proto@^1.0.0:
     dunder-proto "^1.0.1"
     es-object-atoms "^1.0.0"
 
-go-captcha-uni@1.0.2-beta:
-  version "1.0.2-beta"
-  resolved "https://registry.npmjs.org/go-captcha-uni/-/go-captcha-uni-1.0.2-beta.tgz#6878789e28e6fa720fa2d06bec5152b4888df7c3"
-  integrity sha512-VeXlRfJjMiW8n6FENCtYLG1zG9GGDAxPlHwXUQqIiMw/F/nxrjgKhMSwz9vy60rY/t2v6xcAjiCBV8EPhFXArQ==
+go-captcha-uni@^1.0.3-beta:
+  version "1.0.3-beta"
+  resolved "https://registry.npmjs.org/go-captcha-uni/-/go-captcha-uni-1.0.3-beta.tgz#6555a499514124ecb5d0c4b1ff920c18a98a8e9e"
+  integrity sha512-n1efL1i+8+jZv9/xtKYh/C1Ceq6s5xHmMGvnjzlZllte2xCN9VeVGmDOrfvlnZzTAQL1F6ATylfmOCVIKliqYw==
 
 gopd@^1.2.0:
   version "1.2.0"
