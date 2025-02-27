@@ -2,11 +2,9 @@
   <go-captcha-uni
     type="drag"
     :data="handler.data"
-    :events="{
-      close: handler.closeEvent,
-      refresh: handler.refreshEvent,
-      confirm: handler.confirmEvent,
-    }"
+    @event-confirm="handler.confirmEvent"
+    @event-refresh="handler.refreshEvent"
+    @event-close="handler.closeEvent"
     ref="domRef"
   />
 </template>

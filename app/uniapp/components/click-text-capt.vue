@@ -2,12 +2,10 @@
   <go-captcha-uni
     type="click"
     :data="handler.data"
-    :events="{
-      click: clickevnt,
-      close: handler.closeEvent,
-      refresh: handler.refreshEvent,
-      confirm: handler.confirmEvent,
-    }"
+    @event-click="clickevnt"
+    @event-confirm="handler.confirmEvent"
+    @event-refresh="handler.refreshEvent"
+    @event-close="handler.closeEvent"
     ref="domRef"
   />
 </template>
