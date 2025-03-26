@@ -16,7 +16,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+// axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+axios.defaults.baseURL = 'http://0.0.0.0:9001/';
 
 Vue.config.productionTip = false
 

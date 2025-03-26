@@ -8,7 +8,8 @@ import axios from 'axios'
 
 const root = document.getElementById('root');
 
-axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+// axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+axios.defaults.baseURL = 'http://0.0.0.0:9001/';
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(

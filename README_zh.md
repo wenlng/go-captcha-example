@@ -67,6 +67,7 @@ go run main.go
       |-logic
         |-captdata
           |-click_basic.go      // 生成文本点选验证码数据
+          |-click_basic_theme.go // 生成文本点选验证码数据 - 适配前端主题
           |-click_shape.go      // 生成图形点选验证码数据
           |-rotate_basic.go     // 生成旋转验证码数据
           |-slide_basic.go      // 生成滑动验证码数据
@@ -86,7 +87,7 @@ go run main.go
   |-solid                 // Solid 实例
   |-svelte                // Svelte 实例
 |-app
-  |-uniapp                // uniApp 实例
+  |-uniapp                // UniApp 实例，兼容支持vue2、vue3
 ```
 
 <br/>

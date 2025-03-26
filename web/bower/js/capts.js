@@ -1,4 +1,5 @@
-axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+// axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+axios.defaults.baseURL = 'http://0.0.0.0:9001/';
 
 function toastSuccess(msg) {
   Toastify({

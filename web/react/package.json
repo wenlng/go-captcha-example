@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://47.104.180.148:8081/"
+  "proxy": "http://0.0.0.0:9001/"
 }

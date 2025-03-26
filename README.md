@@ -60,20 +60,21 @@ Open in browser: http://127.0.0.1:9001/go-captcha-example
 
 ### Directory structure
 ```text
-|-internal                  // Golang example
-  |-app
-  |-cache
-  |-logic
-    |-captdata
-      |-click_basic.go      // Generation data for text click
-      |-click_shape.go      // Generation data for shape click
-      |-rotate_basic.go     // Generation data for rotate
-      |-slide_basic.go      // Generation data for slide
-      |-slide_region.go     // Generation data for drag region
-    |-checkdata
-      |-click.go            // Check data for text
-      |-rotate.go           // Check data for rotate
-      |-slide.go            // Check data for slide
+|-golang                    // Golang example
+    |-internal                  
+      |-app
+      |-cache
+      |-logic
+        |-captdata
+          |-click_basic.go      // Generation click text data
+          |-click_shape.go      // Generation click shape data
+          |-rotate_basic.go     // Generation rotate data
+          |-slide_basic.go      // Generation slide data
+          |-slide_region.go     // Generation drag data 
+        |-checkdata
+          |-click.go            // Check data for text
+          |-rotate.go           // Check data for rotate
+          |-slide.go            // Check data for slide
 |-web
   |-native                // Js+Html+Css example
   |-bower                 // Js+Html+Css example, bower tool
