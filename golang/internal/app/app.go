@@ -5,6 +5,7 @@ import (
 	"go-captcha-example/internal/helper"
 	"go-captcha-example/internal/logic/captdata"
 	"go-captcha-example/internal/logic/checkdata"
+	"go-captcha-example/internal/logic/other"
 	"log"
 	"net/http"
 	"path"
@@ -25,6 +26,9 @@ func Start() {
 	http.Handle("/api/go-captcha-check-data/slide-basic", CORS(http.HandlerFunc(checkdata.CheckSlideData)))
 	http.Handle("/api/go-captcha-check-data/slide-region", CORS(http.HandlerFunc(checkdata.CheckSlideData)))
 	http.Handle("/api/go-captcha-check-data/rotate-basic", CORS(http.HandlerFunc(checkdata.CheckRotateData)))
+
+	//
+	http.Handle("/api/go-captcha-check-data/ok", CORS(http.HandlerFunc(other.CheckOk)))
 
 	// example: js+html+css
 	viewStatic := path.Join(helper.GetPWD(), "/web/native/")

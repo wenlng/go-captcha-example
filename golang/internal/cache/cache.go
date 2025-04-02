@@ -11,10 +11,14 @@ import (
 //////////////////////////////////////////////////////////////////////////////////////
 // ====================================================================================
 
+// ExpirationTime 1800s
+const ExpirationTime = 60 * 30
+
 // cachedata
 type cachedata = struct {
 	data     []byte
 	createAt time.Time
+	ok       bool
 }
 
 var mux sync.RWMutex
@@ -29,6 +33,28 @@ func WriteCache(key string, data []byte) {
 		createAt: time.Now(),
 		data:     data,
 	}
+}
+
+// SetCacheOk .
+func SetCacheOk(key string, value bool) {
+	mux.Lock()
+	defer mux.Unlock()
+
+	if _, ok := cachemaps[key]; ok {
+		cachemaps[key].ok = value
+	}
+}
+
+// HasCacheOk .
+func HasCacheOk(key string) bool {
+	mux.Lock()
+	defer mux.Unlock()
+
+	if _, ok := cachemaps[key]; ok {
+		return cachemaps[key].ok
+	}
+
+	return false
 }
 
 // ReadCache .
@@ -65,7 +91,7 @@ func ClearCaches(keys []string) {
 
 // RunTimedTask .
 func RunTimedTask() {
-	ticker := time.NewTicker(time.Minute * 5)
+	ticker := time.NewTicker(time.Minute * 30)
 	go func() {
 		for range ticker.C {
 			checkCacheOvertimeFile()
@@ -78,7 +104,7 @@ func checkCacheOvertimeFile() {
 	var keys = make([]string, 0)
 	for key, data := range cachemaps {
 		ex := time.Now().Unix() - data.createAt.Unix()
-		if ex > (60 * 30) {
+		if ex > ExpirationTime {
 			keys = append(keys, key)
 		}
 	}

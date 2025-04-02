@@ -56,6 +56,7 @@ func CheckSlideData(w http.ResponseWriter, r *http.Request) {
 
 	if chkRet {
 		code = 0
+		cache.SetCacheOk(key, true)
 	}
 
 	bt, _ := json.Marshal(map[string]interface{}{
