@@ -12,8 +12,14 @@ import { AppComponent } from './app.component';
 import axios from 'axios'
 import { provideHotToastConfig } from '@ngxpert/hot-toast';
 
-// axios.defaults.baseURL = 'http://47.104.180.148:8081/';
-axios.defaults.baseURL = 'http://0.0.0.0:9001/';
+//////////////////////////////////////////////////////////
+// Tip:
+// This URL is for effects demonstration only,
+// please do not use in production environment.
+axios.defaults.baseURL = 'http://47.104.180.148:8081/';
+//////////////////////////////////////////////////////////
+
+// axios.defaults.baseURL = 'http://0.0.0.0:9001/';
 
 @NgModule({
   declarations: [

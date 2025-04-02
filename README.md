@@ -8,8 +8,9 @@
 <br/>
 
 > English | [中文](README_zh.md)
-> 
-<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">Go Captcha</a> is a behavior CAPTCHA, which implements text click verification, slide verification and rotation verification.</p>
+>
+
+<p style="text-align: center"><a href="https://github.com/wenlng/go-captcha">GoCaptcha</a> is a behavior CAPTCHA, which implements click mode, slider mode, drag-drop mode and rotation mode.</p>
 
 <p style="text-align: center"> ⭐️ If it helps you, please give a star.</p>
 
