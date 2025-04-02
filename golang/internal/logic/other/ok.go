@@ -10,7 +10,16 @@ import (
 // CheckOk .
 func CheckOk(w http.ResponseWriter, r *http.Request) {
 	code := 1
-	_ = r.ParseForm()
+	err := r.ParseForm()
+	if err != nil {
+		bt, _ := json.Marshal(map[string]interface{}{
+			"code":    code,
+			"message": "parse form data err",
+		})
+		_, _ = fmt.Fprintf(w, string(bt))
+		return
+	}
+
 	key := r.Form.Get("key")
 	if key == "" {
 		bt, _ := json.Marshal(map[string]interface{}{
@@ -31,5 +40,6 @@ func CheckOk(w http.ResponseWriter, r *http.Request) {
 		"ok":   code == 0,
 	})
 	_, _ = fmt.Fprintf(w, string(bt))
+
 	return
 }

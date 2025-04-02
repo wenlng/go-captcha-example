@@ -13,7 +13,16 @@ import (
 // CheckRotateData .
 func CheckRotateData(w http.ResponseWriter, r *http.Request) {
 	code := 1
-	_ = r.ParseForm()
+	err := r.ParseForm()
+	if err != nil {
+		bt, _ := json.Marshal(map[string]interface{}{
+			"code":    code,
+			"message": "parse form data err",
+		})
+		_, _ = fmt.Fprintf(w, string(bt))
+		return
+	}
+
 	angle := r.Form.Get("angle")
 	key := r.Form.Get("key")
 	if angle == "" || key == "" {
