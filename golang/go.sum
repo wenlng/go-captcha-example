@@ -11,6 +11,10 @@ github.com/wenlng/go-captcha-assets v1.0.3 h1:mc2jgRqPAMU5gc6FMjBzVIY9g9DfZkQi5p
 github.com/wenlng/go-captcha-assets v1.0.3/go.mod h1:zinRACsdYcL/S6pHgI9Iv7FKTU41d00+43pNX+b9+MM=
 github.com/wenlng/go-captcha-assets v1.0.4 h1:vf2sz1qCr/DwdxsHbA9VlK9DbjReIRQImrVgSvyty0U=
 github.com/wenlng/go-captcha-assets v1.0.4/go.mod h1:zinRACsdYcL/S6pHgI9Iv7FKTU41d00+43pNX+b9+MM=
+github.com/wenlng/go-captcha-assets v1.0.5 h1:TL+31Qe/kJwcuYyU+jHedjSTZnMu1XKgktKL++lH9Js=
+github.com/wenlng/go-captcha-assets v1.0.5/go.mod h1:zinRACsdYcL/S6pHgI9Iv7FKTU41d00+43pNX+b9+MM=
+github.com/wenlng/go-captcha-assets v1.0.6 h1:PSTTReE7QXsYdBnE/oZB91BllCZSvBKb4uWoJACuhYo=
+github.com/wenlng/go-captcha-assets v1.0.6/go.mod h1:zinRACsdYcL/S6pHgI9Iv7FKTU41d00+43pNX+b9+MM=
 github.com/wenlng/go-captcha/v2 v2.0.1 h1:N6XSHymJ7e9Z/LyWWTWLMAkAXtW27ZROZpvNrqPhSnA=
 github.com/wenlng/go-captcha/v2 v2.0.1/go.mod h1:5hac1em3uXoyC5ipZ0xFv9umNM/waQvYAQdr0cx/h34=
 github.com/wenlng/go-captcha/v2 v2.0.2-pre.1 h1:WvxjEjb9yPlv2/i6WLC2IYG0CXiMLsxp3cf8dK+zT60=
