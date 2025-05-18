@@ -29,15 +29,17 @@ export const useHandler = (domRef, config) => {
 
   const requestCaptchaData = () => {
     domRef.value.clear && domRef.value.clear()
-
     Axios({
       method: 'get',
       url: config.getApi,
+      headers: {
+        "X-API-Key": "my-secret-key-123"
+      }
     }).then((response)=>{
       const {data = {}} = response;
-      if (!Lodash.isEmpty(data) && (data['code'] || 0) === 0) {
-        cData.image = data['image_base64'] || ''
-        cData.thumb = data['thumb_base64'] || ''
+      if (!Lodash.isEmpty(data) && (data['code'] || 0) === 200) {
+        cData.image = data['master_image_base64'] || ''
+        cData.thumb = data['thumb_image_base64'] || ''
         cData.captKey = data['captcha_key'] || ''
       } else {
         message.warning(`get data failed`)
