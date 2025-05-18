@@ -58,9 +58,10 @@ func CheckSlideData(w http.ResponseWriter, r *http.Request) {
 
 	chkRet := false
 	if 2 == len(src) {
-		sx, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[0]), 64)
-		sy, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[1]), 64)
-		chkRet = slide.CheckPoint(int64(sx), int64(sy), int64(dct.X), int64(dct.Y), 4)
+		sx, _ := strconv.Atoi(src[0])
+		sy, _ := strconv.Atoi(src[1])
+
+		chkRet = slide.Validate(sx, sy, dct.X, dct.Y, 5)
 	}
 
 	if chkRet {

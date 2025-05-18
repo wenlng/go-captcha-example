@@ -62,10 +62,10 @@ func CheckClickData(w http.ResponseWriter, r *http.Request) {
 			dot := dct[i]
 			j := i * 2
 			k := i*2 + 1
-			sx, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[j]), 64)
-			sy, _ := strconv.ParseFloat(fmt.Sprintf("%v", src[k]), 64)
+			sx, _ := strconv.Atoi(src[j])
+			sy, _ := strconv.Atoi(src[k])
 
-			chkRet = click.CheckPoint(int64(sx), int64(sy), int64(dot.X), int64(dot.Y), int64(dot.Width), int64(dot.Height), 0)
+			chkRet = click.Validate(sx, sy, dot.X, dot.Y, dot.Width, dot.Height, 5)
 			if !chkRet {
 				break
 			}

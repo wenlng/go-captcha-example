@@ -54,8 +54,9 @@ func CheckRotateData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	sAngle, _ := strconv.ParseFloat(fmt.Sprintf("%v", angle), 64)
-	chkRet := rotate.CheckAngle(int64(sAngle), int64(dct.Angle), 2)
+	sAngle, _ := strconv.Atoi(angle)
+
+	chkRet := rotate.Validate(sAngle, dct.Angle, 5)
 
 	if chkRet {
 		code = 0

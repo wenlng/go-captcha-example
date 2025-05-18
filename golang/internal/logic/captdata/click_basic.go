@@ -11,7 +11,7 @@ import (
 	"github.com/golang/freetype/truetype"
 	"github.com/wenlng/go-captcha-assets/bindata/chars"
 	"github.com/wenlng/go-captcha-assets/resources/fonts/fzshengsksjw"
-	"github.com/wenlng/go-captcha-assets/resources/images_v2"
+	"github.com/wenlng/go-captcha-assets/resources/imagesv2"
 
 	"github.com/wenlng/go-captcha/v2/base/option"
 	"github.com/wenlng/go-captcha/v2/click"
@@ -52,7 +52,7 @@ func init() {
 	}
 
 	// background images
-	imgs, err := images.GetImages()
+	imgs, err := imagesv2.GetImages()
 	if err != nil {
 		log.Fatalln(err)
 	}

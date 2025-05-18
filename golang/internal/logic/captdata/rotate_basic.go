@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wenlng/go-captcha-assets/resources/images_v2"
+	"github.com/wenlng/go-captcha-assets/resources/imagesv2"
 	"github.com/wenlng/go-captcha/v2/base/option"
 	"github.com/wenlng/go-captcha/v2/rotate"
 )
@@ -16,12 +16,14 @@ import (
 var rotateBasicCapt rotate.Captcha
 
 func init() {
-	builder := rotate.NewBuilder(rotate.WithRangeAnglePos([]option.RangeVal{
-		{Min: 20, Max: 330},
-	}))
+	builder := rotate.NewBuilder(
+		rotate.WithRangeAnglePos([]option.RangeVal{
+			{Min: 20, Max: 330},
+		}),
+	)
 
 	// background images
-	imgs, err := images.GetImages()
+	imgs, err := imagesv2.GetImages()
 	if err != nil {
 		log.Fatalln(err)
 	}

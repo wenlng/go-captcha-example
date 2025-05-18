@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wenlng/go-captcha-assets/resources/images_v2"
+	"github.com/wenlng/go-captcha-assets/resources/imagesv2"
 	"github.com/wenlng/go-captcha-assets/resources/tiles"
 
 	"github.com/wenlng/go-captcha/v2/slide"
@@ -23,7 +23,7 @@ func init() {
 	)
 
 	// background images
-	imgs, err := images.GetImages()
+	imgs, err := imagesv2.GetImages()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -102,8 +102,8 @@ func GetSlideBasicCaptData(w http.ResponseWriter, r *http.Request) {
 		"tile_base64":  tileImageBase64,
 		"tile_width":   blockData.Width,
 		"tile_height":  blockData.Height,
-		"tile_x":       blockData.TileX,
-		"tile_y":       blockData.TileY,
+		"tile_x":       blockData.DX,
+		"tile_y":       blockData.DY,
 	})
 	_, _ = fmt.Fprintf(w, string(bt))
 }

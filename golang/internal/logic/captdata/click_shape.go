@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wenlng/go-captcha-assets/resources/images_v2"
+	"github.com/wenlng/go-captcha-assets/resources/imagesv2"
 	"github.com/wenlng/go-captcha-assets/resources/shapes"
 
 	"github.com/wenlng/go-captcha/v2/base/option"
@@ -33,7 +33,7 @@ func init() {
 	}
 
 	// background images
-	imgs, err := images.GetImages()
+	imgs, err := imagesv2.GetImages()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -44,7 +44,7 @@ func init() {
 		click.WithBackgrounds(imgs),
 	)
 
-	shapeCapt = builder.MakeWithShape()
+	shapeCapt = builder.MakeShape()
 }
 
 // GetClickShapesCaptData .
