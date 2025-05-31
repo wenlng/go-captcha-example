@@ -29,6 +29,8 @@ github.com/wenlng/go-captcha/v2 v2.0.3 h1:QTZ39/gVDisPSgvL9O2X2HbTuj5P/z8QsdGB/a
 github.com/wenlng/go-captcha/v2 v2.0.3/go.mod h1:5hac1em3uXoyC5ipZ0xFv9umNM/waQvYAQdr0cx/h34=
 github.com/wenlng/go-captcha/v2 v2.0.4-beta h1:bmcciZ/RQgxcDleJ8H1/drV47m7pduZnqsQM5KchOyk=
 github.com/wenlng/go-captcha/v2 v2.0.4-beta/go.mod h1:5hac1em3uXoyC5ipZ0xFv9umNM/waQvYAQdr0cx/h34=
+github.com/wenlng/go-captcha/v2 v2.0.4 h1:5cSUF36ZyA03qeDMjKmeXGpbYJMXEexZIYK3Vga3ME0=
+github.com/wenlng/go-captcha/v2 v2.0.4/go.mod h1:5hac1em3uXoyC5ipZ0xFv9umNM/waQvYAQdr0cx/h34=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=

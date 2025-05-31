@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./css/gocaptcha.global.css">
+    <link rel="stylesheet" type="text/css" href="./css/toastify.css">
+    <title>Native App</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            color: #3C3C3C;
+            background: #EBF3FB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .example {
+            padding: 40px 0;
+        }
+
+        .box{
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="example">
+    <div class="box" id="click-wrap"></div>
+    <div class="box" id="slide-wrap"></div>
+    <div class="box" id="slide-region-wrap"></div>
+    <div class="box" id="rotate-wrap"></div>
+    <div class="box" id="button-wrap"></div>
+</div>
+<!-- GoCaptcha -->
+<script type="text/javascript" src="./js/gocaptcha.global.js"></script>
+<!-- Http Request -->
+<script src="./js/axios.js"></script>
+<!-- Request parameter serialization-->
+<script src="./js/qs.js"></script>
+<!-- Toast Tip -->
+<script src="./js/toastify.js"></script>
+
+<script type="text/javascript">
+axios.defaults.baseURL = 'http://127.0.0.1:8081';
+
+function toastSuccess(msg) {
+    Toastify({
+        text: msg,
+        duration: 1000,
+        newWindow: true,
+        gravity: "top",
+        position: "center",
+        style: {
+            background: "#f0f9eb",
+            border: "1px solid #dcf9cc",
+            color: "#5eaa2f",
+            borderRadius: "6px",
+            boxShadow: "1px 1px 10px #e0e0e0",
+            padding: "8px 20px"
+        },
+    }).showToast();
+}
+
+function toastError(msg) {
+    Toastify({
+        text: msg,
+        duration: 1000,
+        newWindow: true,
+        gravity: "top",
+        position: "center",
+        style: {
+            background: "#fef0f0",
+            border: "1px solid #fcd6d6",
+            color: "#ed4630",
+            borderRadius: "6px",
+            boxShadow: "1px 1px 10px #e0e0e0",
+            padding: "8px 20px"
+        },
+    }).showToast();
+}
+
+
+// Click Example
+;(function (goCaptcha){
+    const captTypeId = "click-default-ch";
+    const getDataApi = "/api/v1/public/get-data?id="+captTypeId;
+    const checkDataApi = "api/v1/public/check-data";
+
+    const el = document.getElementById("click-wrap");
+    const capt = new goCaptcha.Click({
+        width: 300,
+        height: 220,
+        // iconSize: 30,
+    });
+
+    var captKey = ''
+
+    capt.mount(el)
+
+    capt.setEvents({
+        click(x,  y) {
+            console.log('click - ', x, y)
+        },
+        confirm(dots, reset) {
+            confirmEvent(dots)
+        },
+        refresh() {
+            capt.clear()
+            requestCaptchaData()
+        },
+        close() {
+            console.log('>>>>> close')
+        }
+    })
+
+    const requestCaptchaData = function() {
+        capt.clear()
+        captKey = ''
+        axios({
+            method: 'get',
+            url: getDataApi,
+        }).then(function(response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200) {
+                const data = result['data'] || {};
+
+                capt.setData({
+                    image: data['master_image_base64'] || '',
+                    thumb: data['thumb_image_base64'] || '',
+                })
+                captKey = data['captcha_key'] || ''
+            } else {
+                toastError(`get data failed`)
+            }
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    const confirmEvent = function (dots) {
+        const dotArr = []
+        for (let i = 0; i < dots.length; i++) {
+            const dot = dots[i]
+            dotArr.push(dot.x, dot.y)
+        }
+
+        axios({
+            method: 'post',
+            url: checkDataApi,
+            data: {
+                id: captTypeId,
+                captchaKey: captKey || '',
+                value: dotArr.join(',')
+            },
+        }).then(function (response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200 && result['data'] === 'ok') {
+                toastSuccess(`check data success`)
+            } else {
+                toastError(`check data failed`)
+            }
+
+            setTimeout(() => {
+                requestCaptchaData()
+            }, 500)
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    requestCaptchaData()
+})(window.GoCaptcha || {})
+
+// Slide Example
+;(function (goCaptcha){
+    const captTypeId = "slide-default";
+    const getDataApi = "/api/v1/public/get-data?id="+captTypeId;
+    const checkDataApi = "api/v1/public/check-data";
+
+    const el = document.getElementById("slide-wrap");
+    const capt = new goCaptcha.Slide({
+        width: 300,
+        height: 220,
+    });
+
+    var captKey = ''
+
+    capt.mount(el)
+
+    capt.setEvents({
+        move(x,  y) {
+            console.log('move - ', x, y)
+        },
+        confirm(dots, reset) {
+            confirmEvent(dots)
+        },
+        refresh() {
+            capt.clear()
+            requestCaptchaData()
+        },
+        close() {
+            console.log('>>>>> close')
+        }
+    })
+
+    const requestCaptchaData = function() {
+        capt.clear()
+        captKey = ''
+        axios({
+            method: 'get',
+            url: getDataApi,
+        }).then(function(response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200) {
+                const data = result['data'] || {};
+                capt.setData({
+                    image: data['master_image_base64'] || '',
+                    thumb: data['thumb_image_base64'] || '',
+                    thumbX: data['display_x'] || 0,
+                    thumbY: data['display_y'] || 0,
+                    thumbWidth: data['thumb_width'] || 0,
+                    thumbHeight: data['thumb_height'] || 0,
+                })
+
+                captKey = data['captcha_key'] || ''
+            } else {
+                toastError(`get data failed`)
+            }
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    const confirmEvent = function (point) {
+        axios({
+            method: 'post',
+            url: checkDataApi,
+            data: {
+                id: captTypeId,
+                captchaKey: captKey || '',
+                value: [point.x, point.y].join(','),
+            },
+        }).then(function (response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200 && result['data'] === 'ok') {
+                toastSuccess(`check data success`)
+            } else {
+                toastError(`check data failed`)
+            }
+
+            setTimeout(() => {
+                requestCaptchaData()
+            }, 500)
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    requestCaptchaData()
+})(window.GoCaptcha || {})
+
+// SlideRegion Example
+;(function (goCaptcha){
+    const captTypeId = "drag-default";
+    const getDataApi = "/api/v1/public/get-data?id="+captTypeId;
+    const checkDataApi = "api/v1/public/check-data";
+
+    const el = document.getElementById("slide-region-wrap");
+    const capt = new goCaptcha.SlideRegion({
+        width: 300,
+        height: 220,
+    });
+
+    var captKey = ''
+
+    capt.mount(el)
+
+    capt.setEvents({
+        move(x,  y) {
+            console.log('move - ', x, y)
+        },
+        confirm(dots, reset) {
+            confirmEvent(dots)
+        },
+        refresh() {
+            capt.clear()
+            requestCaptchaData()
+        },
+        close() {
+            console.log('>>>>> close')
+        }
+    })
+
+    const requestCaptchaData = function() {
+        capt.clear()
+        captKey = ''
+        axios({
+            method: 'get',
+            url: getDataApi,
+        }).then(function(response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200) {
+                const data = result['data'] || {};
+                capt.setData({
+                    image: data['master_image_base64'] || '',
+                    thumb: data['thumb_image_base64'] || '',
+                    thumbX: data['display_x'] || 0,
+                    thumbY: data['display_y'] || 0,
+                    thumbWidth: data['thumb_width'] || 0,
+                    thumbHeight: data['thumb_height'] || 0,
+                })
+
+                captKey = data['captcha_key'] || ''
+            } else {
+                toastError(`get data failed`)
+            }
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    const confirmEvent = function (point) {
+        axios({
+            method: 'post',
+            url: checkDataApi,
+            data: {
+                id: captTypeId,
+                captchaKey: captKey || '',
+                value: [point.x, point.y].join(','),
+            },
+        }).then(function (response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200 && result['data'] === 'ok') {
+                toastSuccess(`check data success`)
+            } else {
+                toastError(`check data failed`)
+            }
+
+            setTimeout(() => {
+                requestCaptchaData()
+            }, 500)
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    requestCaptchaData()
+})(window.GoCaptcha || {})
+
+
+// Rotate Example
+;(function (goCaptcha){
+    const captTypeId = "rotate-default";
+    const getDataApi = "/api/v1/public/get-data?id="+captTypeId;
+    const checkDataApi = "api/v1/public/check-data";
+
+    const el = document.getElementById("rotate-wrap");
+    const capt = new goCaptcha.Rotate({
+        width: 300,
+        height: 220,
+    });
+
+    var captKey = ''
+
+    capt.mount(el)
+
+    capt.setEvents({
+        move(x,  y) {
+            console.log('move - ', x, y)
+        },
+        confirm(dots, reset) {
+            confirmEvent(dots)
+        },
+        refresh() {
+            capt.clear()
+            requestCaptchaData()
+        },
+        close() {
+            console.log('>>>>> close')
+        }
+    })
+
+    const requestCaptchaData = function() {
+        capt.clear()
+        captKey = ''
+        axios({
+            method: 'get',
+            url: getDataApi,
+        }).then(function(response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200) {
+                const data = result['data'] || {};
+                capt.setData({
+                    image: data['master_image_base64'] || '',
+                    thumb: data['thumb_image_base64'] || '',
+                    thumbSize: data['thumb_size'] || 0,
+                })
+
+                captKey = data['captcha_key'] || ''
+            } else {
+                toastError(`get data failed`)
+            }
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    const confirmEvent = function (angle) {
+        axios({
+            method: 'post',
+            url: checkDataApi,
+            data: {
+                id: captTypeId,
+                captchaKey: captKey || '',
+                value: angle.toString(),
+            },
+        }).then(function (response){
+            const result = response.data || {};
+            if (result && (result['code'] || 0) === 200 && result['data'] === 'ok') {
+                toastSuccess(`check data success`)
+            } else {
+                toastError(`check data failed`)
+            }
+
+            setTimeout(() => {
+                requestCaptchaData()
+            }, 500)
+        }).catch((e)=>{
+            console.warn(e)
+        })
+    }
+
+    requestCaptchaData()
+})(window.GoCaptcha || {})
+
+
+// Button Example
+;(function (goCaptcha){
+    const el = document.getElementById("button-wrap");
+    const capt = new goCaptcha.Button();
+    capt.mount(el)
+    capt.setState({
+        clickEvent: () => {
+            toastSuccess(`Hello GoCaptcha!`)
+        }
+    })
+})(window.GoCaptcha || {})
+
+</script>
+</body>
+</html>

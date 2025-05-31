@@ -88,6 +88,7 @@ go run main.go
   |-angular               // Angular 实例
   |-solid                 // Solid 实例
   |-svelte                // Svelte 实例
+  |-service                // Service 版本实例
 |-app
   |-uniapp                // UniApp 实例，兼容支持vue2、vue3
 ```
